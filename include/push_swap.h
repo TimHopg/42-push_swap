@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/08 13:54:41 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/08 22:27:28 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int 				is_duplicate(t_list *a);
 
 // ops
 void				op_s(t_list **head_a, t_list **head_b);
+void 				op_p(t_list **head_from, t_list **head_to);
 void				op_r(t_list **head_a, t_list **head_b);
 void				op_rr(t_list **head_a, t_list **head_b);
-void 				op_p(t_list **head_from, t_list **head_to);
 void				lst_mod(void (*mod)(t_list **, t_list **), t_list
 		**head_a, t_list **head_b);
