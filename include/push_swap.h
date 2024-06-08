@@ -6,9 +6,12 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/08 22:27:28 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/08 22:40:46 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
 
 #include <limits.h>
 #include <stdio.h>
@@ -37,3 +40,5 @@ void				op_r(t_list **head_a, t_list **head_b);
 void				op_rr(t_list **head_a, t_list **head_b);
 void				lst_mod(void (*mod)(t_list **, t_list **), t_list
 		**head_a, t_list **head_b);
+
+#endif
