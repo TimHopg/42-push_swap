@@ -6,17 +6,17 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 15:01:06 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 18:48:22 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- TODO should the stk be cyclical to avoid iterating over the whole stk?
- * or even doubly linked?
  TODO error reporting on channel 2
  TODO Count operations as they are being printed
+ TODO Error handling and freeing
+ * Have chosen to interpret -0 and +0 as valid.
 */
 
 /* int	main(void)
