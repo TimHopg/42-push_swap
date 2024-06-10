@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:56:14 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/08 19:01:13 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 11:16:14 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
  * Checks list for duplicate data in content. Hash table would be more efficient
  */
 
-int is_duplicate(t_list *lst)
+int is_duplicate(t_stack *stk)
 {
-	t_list	*curr;
+	t_stack	*curr;
 
-	while (lst)
+	while (stk)
 	{
-		curr = lst->next;
+		curr = stk->next;
 		while (curr)
 		{
-			if (lst->content == curr->content)
+			if (stk->content == curr->content)
 				return (1);
 			curr = curr->next;
 		}
-		lst = lst->next;
+		stk = stk->next;
 	}
 	return (0);
 }

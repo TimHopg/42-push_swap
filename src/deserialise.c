@@ -6,11 +6,12 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/09 00:17:22 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 11:20:25 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "../libft/include/libft.h"
 
 /* 
  * Takes input from the command line and deserialises into linked list.
@@ -25,13 +26,16 @@ void parse_input(int ac, char **av)
     {
         format_string(av[1]);
     }
-    else
-    {
-        format_list(av);
-    }
+    // else
+    // {
+    //     format_list(av);
+    // }
 }
 
 void format_string(char *str)
 {
-    
+    char **ops_list;
+
+    ops_list = ft_split(str, ' ');
+    printf("%s\n", ops_list[0]);
 }

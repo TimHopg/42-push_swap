@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:57:27 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/08 22:25:30 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 11:16:50 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
  * Prints list
  */
 
-void	ft_print_list(t_list *head, char c)
+void	ft_print_stk(t_stack *head, char c)
 {
-	t_list	*curr;
+	t_stack	*curr;
 	int		i;
 
 	curr = NULL;
@@ -26,7 +26,7 @@ void	ft_print_list(t_list *head, char c)
 	curr = head;
 	while (curr)
 	{
-		printf("List[%c] Node[%d]: %d\n", c, i++, curr->content);
+		printf("stk[%c] Node[%d]: %d\n", c, i++, curr->content);
 		curr = curr->next;
 	}
 }
@@ -35,11 +35,11 @@ void	ft_print_list(t_list *head, char c)
  * Creates (and allocates memory) for new node with content data value
  */
 
-t_list	*ft_lstnew(int content)
+t_stack	*ft_stknew(int content)
 {
-	t_list	*new_node;
+	t_stack	*new_node;
 
-	new_node = malloc(sizeof(t_list));
+	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
 	new_node->content = content;
@@ -48,46 +48,46 @@ t_list	*ft_lstnew(int content)
 }
 
 /*
- * Returns last node in list
+ * Returns last node in stk
  */
 
-t_list	*ft_lstlast(t_list *lst)
+t_stack	*ft_stklast(t_stack *stk)
 {
-	t_list	*node;
+	t_stack	*node;
 
-	if (lst == NULL)
+	if (stk == NULL)
 		return (NULL);
-	node = lst;
+	node = stk;
 	while (node->next != NULL)
 		node = node->next;
 	return (node);
 }
 
 /*
- * Appends node 'new' to list 'lst'
+ * Appends node 'new' to stk 'stk'
  */
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_stkadd_back(t_stack **stk, t_stack *new)
 {
-	t_list	*curr;
+	t_stack	*curr;
 
-	if (lst == NULL || new == NULL)
+	if (stk == NULL || new == NULL)
 		return ;
-	curr = *lst;
-	if (*lst == NULL)
-		*lst = new;
+	curr = *stk;
+	if (*stk == NULL)
+		*stk = new;
 	else
-		ft_lstlast(curr)->next = new;
+		ft_stklast(curr)->next = new;
 }
 
 /*
- * Frees all nodes in list
+ * Frees all nodes in stk
  */
 
-void	free_list(t_list *head)
+void	free_stk(t_stack *head)
 {
-	t_list	*current;
-	t_list	*next;
+	t_stack	*current;
+	t_stack	*next;
 
 	current = head;
 	while (current)
