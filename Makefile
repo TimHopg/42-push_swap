@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/10 19:29:38 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/10 22:54:22 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ SRC = 	deserialise.c \
 		operations.c \
 		main.c
 
-# OBJ = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
 INCLUDE = -L ./libft -lft
@@ -39,18 +38,32 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 $(NAME): $(OBJ)
 	@make -C $(LIBFT_DIR)
+	@echo ""${BLUE}$(NAME)""${NC}Compiling... "\c"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INCLUDE)
+	@echo ""${GREEN}Complete""$(NC)""
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+# $(RM) $(OBJ)
 	@cd $(LIBFT_DIR) && $(MAKE) clean
+	@echo ""${BLUE}$(NAME)""${NC}Cleaning..."\c"
+	@$(RM) $(OBJ_DIR)
+	@echo ""${GREEN}Complete""$(NC)""
 
 fclean: clean
-	$(RM) $(NAME)
 	@cd $(LIBFT_DIR) && $(MAKE) fclean
+	@$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re bonus
+
+# Colours
+WHITE	=	'\033[0;37m'
+YELLOW	=	'\033[0;33m'
+BLUE	=	'\033[0;34m'
+GREEN	=	'\033[0;32m'
+RED		=	'\033[0;31m'
+NC		=	'\033[0m' # no colour
+#> /dev/null

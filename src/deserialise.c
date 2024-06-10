@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 19:04:12 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 21:45:11 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ static t_stack	*format_list(int count, char **strings, int start)
 		}
 		node = ft_stknew(nbr);
 		ft_stkadd_back(&head, node);
+		// ft_lstadd_back(&head, node);
 	}
 	return (head);
 }

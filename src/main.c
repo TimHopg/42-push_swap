@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 18:48:22 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 22:56:46 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
  TODO error reporting on channel 2
  TODO Count operations as they are being printed
  TODO Error handling and freeing
+ TODO remove char from print list
+ TODO add printf, get_next_line, etc. to libft
+ TODO ensure bonus doesn't relink
  * Have chosen to interpret -0 and +0 as valid.
 */
 
@@ -63,16 +66,7 @@
 int main(int ac, char **av)
 {
 	t_stack *head;
-	// long nbr;
-	// int temp;
 
-	// temp = ft_atoi_ps("-", &nbr);
-	// printf("%d temp\n", temp);
-	// printf("%ld temp\n", nbr);
-
-	// (void)ac;
-	// (void)av;
-	// printf("%d ft_atoi_ps(\"-\")\n", atoi("-"));
 	head = NULL;
 	head = parse_input(ac, av);
 	ft_print_stk(head, 'a');

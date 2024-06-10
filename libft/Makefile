@@ -6,97 +6,96 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 19:27:57 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/10 19:13:08 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/10 22:52:25 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
-LIBC		= ar -rcs
 NAME		= libft.a
-HEADER		= ../include/libft.h
-SRC_DIR		= src
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -Iinclude
 RM			= rm -rf
+LIBC		= ar -rcs
 
-SRC			= 	src/ft_isalpha.c \
-				src/ft_isdigit.c \
-				src/ft_isalnum.c \
-				src/ft_isascii.c \
-				src/ft_isprint.c \
-				src/ft_strlen.c \
-				src/ft_memset.c \
-				src/ft_bzero.c \
-				src/ft_memcpy.c \
-				src/ft_memmove.c \
-				src/ft_strlcpy.c \
-				src/ft_strlcat.c \
-				src/ft_toupper.c \
-				src/ft_tolower.c \
-				src/ft_strchr.c \
-				src/ft_strrchr.c \
-				src/ft_strncmp.c \
-				src/ft_memchr.c \
-				src/ft_memcmp.c \
-				src/ft_strnstr.c \
-				src/ft_atoi.c \
-				src/ft_calloc.c \
-				src/ft_strdup.c \
-				src/ft_substr.c \
-				src/ft_strjoin.c \
-				src/ft_strtrim.c \
-				src/ft_split.c \
-				src/ft_itoa.c \
-				src/ft_strmapi.c \
-				src/ft_striteri.c \
-				src/ft_putchar_fd.c \
-				src/ft_putstr_fd.c \
-				src/ft_putendl_fd.c \
-				src/ft_putnbr_fd.c
+# Directories
+SRC_DIR		= src/
+OBJ_DIR 	= obj/
+HEADER		= include/libft.h
 
-EXTRA_SRC	= 	src/ft_isspace.c \
-				src/ft_putbase_fd.c \
-				src/ft_abs.c
+# Sources
+SRC			= 	ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isalnum.c \
+				ft_isascii.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmp.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_strnstr.c \
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c \
+				ft_substr.c \
+				ft_strjoin.c \
+				ft_strtrim.c \
+				ft_split.c \
+				ft_itoa.c \
+				ft_strmapi.c \
+				ft_striteri.c \
+				ft_putchar_fd.c \
+				ft_putstr_fd.c \
+				ft_putendl_fd.c \
+				ft_putnbr_fd.c \
+				ft_isspace.c \
+				ft_putbase_fd.c \
+				ft_abs.c \
+				ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c \
+				# fr_printf.c \
+				# get_next_line.c \
+				# putnbr_base.c
 
-BONUS_SRC	= 	src/ft_lstnew.c \
-				src/ft_lstadd_front.c \
-				src/ft_lstsize.c \
-				src/ft_lstlast.c \
-				src/ft_lstadd_back.c \
-				src/ft_lstdelone.c \
-				src/ft_lstclear.c \
-				src/ft_lstiter.c \
-				src/ft_lstmap.c
+OBJ			= $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
-OBJ			= $(SRC:.c=.o) $(EXTRA_SRC:.c=.o)
+# %.o: %.c $(HEADER)
+# 	@$(CC) $(CFLAGS) -c $< -o $@
 
-BONUS_OBJ	= $(BONUS_SRC:.c=.o)
-
-%.o: %.c $(HEADER)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo -n ""${BLUE}$(NAME)""${NC}Archiving... ""
+	@echo ""${BLUE}$(NAME)""${NC}Archiving... "\c"
 	@$(LIBC) $(NAME) $(OBJ)
 	@echo ""${GREEN}OK""$(NC)""
-
-bonus: $(BONUS_OBJ) $(OBJ)
-	@echo -n ""${BLUE}$(NAME)" "$(YELLOW)[bonus]""${NC}Archiving... ""
-	@if make OBJ="$(OBJ) $(BONUS_OBJ)" all \
-	| grep -q "Nothing"; then \
-	echo "\nmake: Nothing to be done for 'bonus'."; \
-	else \
-		echo ""${GREEN}OK${NC}""; \
-	fi
+	
+all: $(NAME)
 
 clean:
-	@$(RM) $(BONUS_SRC:.c=.o) $(SRC:.c=.o) $(EXTRA_SRC:.c=.o)
+	@$(RM) $(OBJ_DIR)
 
 fclean: clean
 	@$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re bonus
 
