@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 11:22:02 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:57:07 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void				op_rr(t_stack **head_a, t_stack **head_b);
 void				stk_mod(void (*mod)(t_stack **, t_stack **), t_stack **head_a,
 						t_stack **head_b);
 // deserialise
-void 				parse_input(int ac, char **av);
-void				format_string(char *str);
+int					ft_atoi_ps(const char *nptr, long *output);
+t_stack 			*parse_input(int ac, char **av);
+t_stack				*format_string(char *str);
+t_stack 			*format_list(int ac, char **av, int start);
 
 #endif

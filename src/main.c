@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 11:22:29 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:01:06 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  TODO Count operations as they are being printed
 */
 
-int	main(void)
+/* int	main(void)
 {
 	t_stack	*head_a = ft_stknew(1);
 	t_stack	*node_a = ft_stknew(2);
@@ -58,9 +58,22 @@ int	main(void)
 	// printf("After\n");
 	// ft_print_stk(head_b, 'b');
 	printf("\n");
-}
+} */
 
-// int main(int ac, char **av)
-// {
-// 	parse_input(ac, av);
-// }
+int main(int ac, char **av)
+{
+	t_stack *head;
+	// long nbr;
+	// int temp;
+
+	// temp = ft_atoi_ps("-", &nbr);
+	// printf("%d temp\n", temp);
+	// printf("%ld temp\n", nbr);
+
+	// (void)ac;
+	// (void)av;
+	// printf("%d ft_atoi_ps(\"-\")\n", atoi("-"));
+	head = NULL;
+	head = parse_input(ac, av);
+	ft_print_stk(head, 'a');
+}
