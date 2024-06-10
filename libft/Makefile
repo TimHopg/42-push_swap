@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 19:27:57 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/10 22:52:25 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/10 23:03:32 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,8 +74,6 @@ SRC			= 	ft_isalpha.c \
 
 OBJ			= $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
-# %.o: %.c $(HEADER)
-# 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)

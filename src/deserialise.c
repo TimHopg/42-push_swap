@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 21:45:11 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 23:14:30 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*parse_input(int ac, char **av)
 
 	head = NULL;
 	if (ac == 1)
-		return (ft_putstr_fd("Error\n", 2), NULL);
+		return (NULL);
 	else if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');

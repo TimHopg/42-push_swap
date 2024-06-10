@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/10 22:54:22 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/10 23:19:10 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = 	deserialise.c \
 		duplicate.c \
 		list_utils.c \
 		operations.c \
+		sort.c \
 		main.c
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
@@ -45,7 +46,6 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-# $(RM) $(OBJ)
 	@cd $(LIBFT_DIR) && $(MAKE) clean
 	@echo ""${BLUE}$(NAME)""${NC}Cleaning..."\c"
 	@$(RM) $(OBJ_DIR)

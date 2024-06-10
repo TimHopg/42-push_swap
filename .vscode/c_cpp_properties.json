@@ -5,13 +5,14 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include",
+                "${workspaceFolder}/libft/include",
                 "${workspaceFolder}/src"
             ],
             "defines": [],
             "macFrameworkPath": [
                 "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
             ],
-            "compilerPath": "/usr/bin/clang", "/usr/bin/gcc",
+            "compilerPath": "/usr/bin/gcc",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64",

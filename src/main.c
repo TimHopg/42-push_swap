@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 22:56:46 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 23:13:21 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 /*
  TODO error reporting on channel 2
+ TODO make sure if there are no arguments, nothing happens
  TODO Count operations as they are being printed
  TODO Error handling and freeing
  TODO remove char from print list
