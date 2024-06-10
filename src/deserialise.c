@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 15:09:29 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:18:36 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi_ps(const char *nptr, long *output)
 		nptr++;
 	}
 	*output *= neg;
-    if ((neg == -1 && *output == 0) || *output < INT_MIN || INT_MAX < *output)
+    if ((neg == -1 && *output == 0) || *output < INT_MIN || INT_MAX < *output || *nptr != '\0')
         return (-1);
     else
         return (0);
@@ -47,7 +47,6 @@ int	ft_atoi_ps(const char *nptr, long *output)
 
 /* 
  TODO error handling, free stack
- TODO atoi returning 0 for letters.
  * Takes input from the command line and deserialises into linked list.
  * Works for both a list of args and a single string
  */
@@ -125,7 +124,7 @@ t_stack *format_list(int ac, char **av, int start)
         if (ft_atoi_ps(av[start++], &nbr) == -1)
         {
             free_stk(head);
-            return (printf("error: invalid entry\n"), NULL);
+            return (printf("error: non-int input\n"), NULL);
         }
         node = ft_stknew(nbr);
         ft_stkadd_back(&head, node);
