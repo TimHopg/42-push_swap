@@ -6,14 +6,14 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:06:21 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 23:03:45 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:35:25 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void top_swap(t_stk **stack);
-void	push(t_stk **from, t_stk **to);
+static void	top_swap(t_stk **stack);
+void		push(t_stk **from, t_stk **to);
 
 /*
  * Operation swaps first two elements in 'head_a'. Does nothing if 0 or 1
@@ -58,18 +58,17 @@ void	op_p(t_stk **a, t_stk **b, char c)
 	}
 }
 
-
-static void top_swap(t_stk **stack)
+static void	top_swap(t_stk **stack)
 {
-    t_stk *stk;
-    int temp;
+	t_stk	*stk;
+	int		temp;
 
-    if (*stack == NULL || (*stack)->next == NULL)
-        return;
-    stk = *stack;
-    temp = stk->content;
-    stk->content = stk->next->content;
-    stk->next->content = temp;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	stk = *stack;
+	temp = stk->content;
+	stk->content = stk->next->content;
+	stk->next->content = temp;
 }
 
 void	push(t_stk **from, t_stk **to)

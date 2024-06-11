@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 22:57:08 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 00:29:21 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int					parse_input(int ac, char **av, t_stk **head);
 int					is_duplicate(t_stk *a);
 
 // sort
-int					last_three(t_stk **head_a, t_stk **head_b);
+int					sort_three(t_stk **head_a, t_stk **head_b);
+int					is_three_ordered(t_stk **head);
 
 #endif
