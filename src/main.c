@@ -6,13 +6,14 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 11:46:06 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:25:49 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
+ ! TODO fix ops with char symbols, perform actions and print code.
  TODO error reporting on channel 2
  TODO make sure if there are no arguments, nothing happens
  TODO Count operations as they are being printed
@@ -28,18 +29,28 @@
 
 int main(int ac, char **av)
 {
-	t_stack *head;
+	t_stk *a;
+	t_stk *b;
 
-	head = NULL;
-	head = parse_input(ac, av);
-
-	if (head == NULL)
+	a = NULL;
+	b = NULL;
+	if (parse_input(ac, av, &a) < 0)
 		return (-1);
-	// printf("Before\n");
-	ft_print_stk(head, 'a');
-	printf("%d min\n", list_min(head));
-	// printf("After\n");
+		
+	printf("Before\n");
+	b = a;
+	ft_print_stk(a, 'a');
+	printf("\n");
+	ft_print_stk(b, 'b');
+	// stk_mod(op_s, &a, &b, 'a');
+	stk_mod(op_s, &a, &b, 'b');
 
+	// printf("%d\n", last_three(&a, &b));
+	printf("After\n");
+	ft_print_stk(a, 'a');
+	printf("\n");
+	ft_print_stk(b, 'b');
+	
 }
 
 /* int	main(void)

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:57:27 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 11:16:50 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:28:05 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
  * Prints list
  */
 
-void	ft_print_stk(t_stack *head, char c)
+void	ft_print_stk(t_stk *head, char c)
 {
-	t_stack	*curr;
+	t_stk	*curr;
 	int		i;
 
 	curr = NULL;
@@ -35,11 +35,11 @@ void	ft_print_stk(t_stack *head, char c)
  * Creates (and allocates memory) for new node with content data value
  */
 
-t_stack	*ft_stknew(int content)
+t_stk	*ft_stknew(int content)
 {
-	t_stack	*new_node;
+	t_stk	*new_node;
 
-	new_node = malloc(sizeof(t_stack));
+	new_node = malloc(sizeof(t_stk));
 	if (!new_node)
 		return (NULL);
 	new_node->content = content;
@@ -51,9 +51,9 @@ t_stack	*ft_stknew(int content)
  * Returns last node in stk
  */
 
-t_stack	*ft_stklast(t_stack *stk)
+t_stk	*stk_last(t_stk *stk)
 {
-	t_stack	*node;
+	t_stk	*node;
 
 	if (stk == NULL)
 		return (NULL);
@@ -67,9 +67,9 @@ t_stack	*ft_stklast(t_stack *stk)
  * Appends node 'new' to stk 'stk'
  */
 
-void	ft_stkadd_back(t_stack **stk, t_stack *new)
+void	ft_stkadd_back(t_stk **stk, t_stk *new)
 {
-	t_stack	*curr;
+	t_stk	*curr;
 
 	if (stk == NULL || new == NULL)
 		return ;
@@ -77,17 +77,17 @@ void	ft_stkadd_back(t_stack **stk, t_stack *new)
 	if (*stk == NULL)
 		*stk = new;
 	else
-		ft_stklast(curr)->next = new;
+		stk_last(curr)->next = new;
 }
 
 /*
  * Frees all nodes in stk
  */
 
-void	free_stk(t_stack *head)
+void	free_stk(t_stk *head)
 {
-	t_stack	*current;
-	t_stack	*next;
+	t_stk	*current;
+	t_stk	*next;
 
 	current = head;
 	while (current)

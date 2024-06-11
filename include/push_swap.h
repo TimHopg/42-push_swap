@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 11:19:16 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:41:53 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,31 @@ typedef struct s_stack
 {
 	int				content;
 	struct s_stack	*next;
-}					t_stack;
+}					t_stk;
 
 // main
-void				ft_stkadd_back(t_stack **stk, t_stack *new);
-t_stack				*ft_stknew(int content);
-void				ft_print_stk(t_stack *head, char c);
+void				ft_stkadd_back(t_stk **stk, t_stk *new);
+t_stk				*ft_stknew(int content);
+void				ft_print_stk(t_stk *head, char c);
 
 // utils
-void				free_stk(t_stack *head);
-t_stack				*ft_stklast(t_stack *stk);
-int					list_min(t_stack *head);
+void				free_stk(t_stk *head);
+t_stk				*stk_last(t_stk *stk);
+int					list_min(t_stk *head);
+int					list_max(t_stk *head);
 
 // ops
-void				op_s(t_stack **head_a, t_stack **head_b);
-void				op_p(t_stack **head_from, t_stack **head_to);
-void				op_r(t_stack **head_a, t_stack **head_b);
-void				op_rr(t_stack **head_a, t_stack **head_b);
-void				stk_mod(void (*mod)(t_stack **, t_stack **),
-						t_stack **head_a, t_stack **head_b);
+void				op_s(t_stk **a, t_stk **b, char c);
+void				op_p(t_stk **from, t_stk **to, char c);
+void				op_r(t_stk **a, t_stk **b, char c);
+void				op_rr(t_stk **a, t_stk **b, char c);
+void				stk_mod(void (*mod)(t_stk **, t_stk **, char c), t_stk **a,
+						t_stk **b, char c);
 // deserialise
-t_stack				*parse_input(int ac, char **av);
-int					is_duplicate(t_stack *a);
+int					parse_input(int ac, char **av, t_stk **head);
+int					is_duplicate(t_stk *a);
+
+// sort
+int					last_three(t_stk **head_a, t_stk **head_b);
 
 #endif

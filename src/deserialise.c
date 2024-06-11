@@ -6,47 +6,43 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 11:46:57 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:28:05 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*format_list(int count, char **strings, int start);
-static int		ft_atoi_ps(const char *nptr, long *output);
-static int		is_int(long nbr);
+static int	format_list(int count, char **strs, int start, t_stk **head);
+static int	ft_atoi_ps(const char *nptr, long *output);
+static int	is_int(long nbr);
+int			is_duplicate(t_stk *stk);
 
 /*
  * Takes input from the command line and deserialises into linked list.
  * Works for both a list of args and a single space delimited string.
  */
 
-t_stack	*parse_input(int ac, char **av)
+int	parse_input(int ac, char **av, t_stk **head)
 {
-	t_stack	*head;
-	int		list_len;
+	int	list_len;
 
-	head = NULL;
 	if (ac == 1)
-		return (NULL);
+		return (-1);
 	else if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');
 		list_len = 0;
 		while (av[list_len] != NULL)
 			list_len++;
-		head = format_list(list_len, av, 0);
+		if (format_list(list_len, av, 0, head) < 0)
+			return (-1);
 	}
-	else
-		head = format_list(ac, av, 1);
-	// if (head == NULL)
-	// 	return (NULL);
-	if (is_duplicate(head))
-	{
-		free_stk(head);
-		return (ft_putstr_fd("Error\n", 2), NULL);
-	}
-	return (head);
+	else 
+		if (format_list(ac, av, 1, head) < 0)
+			return (-1);
+	if (is_duplicate(*head))
+		return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
+	return (0);
 }
 
 /*
@@ -54,24 +50,44 @@ t_stack	*parse_input(int ac, char **av)
  * Count from 'argc' must begin from one, otherwise from 0.
  */
 
-static t_stack	*format_list(int count, char **strings, int start)
+static int	format_list(int count, char **strs, int start, t_stk **head)
 {
-	t_stack	*node;
-	t_stack	*head;
+	t_stk	*node;
 	long	nbr;
 
-	head = NULL;
 	while (start < count)
 	{
-		if (ft_atoi_ps(strings[start++], &nbr) == -1)
+		if (ft_atoi_ps(strs[start++], &nbr) == -1)
 		{
-			free_stk(head);
-			return (ft_putstr_fd("Error\n", 2), NULL);
+			free_stk(*head);
+			return (ft_putstr_fd("Error\n", 2), -1);
 		}
 		node = ft_stknew(nbr);
-		ft_stkadd_back(&head, node);
+		ft_stkadd_back(head, node);
 	}
-	return (head);
+	return (0);
+}
+
+/*
+ * Checks list for duplicate data in content. Hash table would be more efficient
+ */
+
+int	is_duplicate(t_stk *stk)
+{
+	t_stk	*curr;
+
+	while (stk)
+	{
+		curr = stk->next;
+		while (curr)
+		{
+			if (stk->content == curr->content)
+				return (1);
+			curr = curr->next;
+		}
+		stk = stk->next;
+	}
+	return (0);
 }
 
 static int	is_int(long nbr)

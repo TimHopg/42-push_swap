@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:06:21 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 11:18:15 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 19:23:24 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
  * Operation swaps first two elements in 'head_a'. Does nothing if 0 or 1 nodes
  */
 
-void	op_s(t_stack **head_a, t_stack **head_b)
+void	op_s(t_stk **a, t_stk **b, char c)
 {
-	t_stack	*stk;
+	t_stk	*stk;
 	int		temp;
 
-	if (*head_a == NULL || (*head_a)->next == NULL)
-		return;
-	(void)head_b;
-	stk = *head_a;
+	if (c == 'b')
+		*a = *b;
+	else if (c == 's')
+		op_s(a, b, 'a');
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	stk = *a;
 	if (stk->next)
 	{
 		temp = stk->content;
@@ -37,16 +40,17 @@ void	op_s(t_stack **head_a, t_stack **head_b)
  * Push first element from head_from to top of head_to
  */
 
-void op_p(t_stack **head_from, t_stack **head_to)
+void	op_p(t_stk **from, t_stk **to, char c)
 {
-	t_stack *temp;
-	
-	if (*head_from == NULL || (head_to == NULL))
-		return;
-	temp = (*head_from)->next;
-	(*head_from)->next = *head_to;
-	*head_to = *head_from;
-	*head_from = temp;
+	t_stk	*temp;
+
+	(void)c;
+	if (*from == NULL || (to == NULL))
+		return ;
+	temp = (*from)->next;
+	(*from)->next = *to;
+	*to = *from;
+	*from = temp;
 }
 
 /*
@@ -54,22 +58,22 @@ void op_p(t_stack **head_from, t_stack **head_to)
  * First element becomes last.
  */
 
-void	op_r(t_stack **head_a, t_stack **head_b)
+void	op_r(t_stk **a, t_stk **b, char c)
 {
-	t_stack	*first;
-	t_stack	*second;
-	t_stack	*last;
+	t_stk	*first;
+	t_stk	*second;
+	t_stk	*last;
 
-	if (*head_a == NULL || (*head_a)->next == NULL)
-		return;
-	(void)head_b;
-	first = *head_a;
+	(void)c;
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	(void)b;
+	first = *a;
 	second = first->next;
-	last = ft_stklast(first);
-
+	last = stk_last(first);
 	last->next = first;
 	first->next = NULL;
-	*head_a = second;
+	*a = second;
 }
 
 /*
@@ -77,31 +81,32 @@ void	op_r(t_stack **head_a, t_stack **head_b)
  * Last element becomes first.
  */
 
-void	op_rr(t_stack **head_a, t_stack **head_b)
+void	op_rr(t_stk **a, t_stk **b, char c)
 {
-	t_stack *first;
-	t_stack *penult;
-	t_stack *last;
+	t_stk	*first;
+	t_stk	*penult;
+	t_stk	*last;
 
-	(void)head_b;
-	if (*head_a == NULL || (*head_a)->next == NULL)
-		return;
-	first = *head_a;
+	(void)b;
+	(void)c;
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	first = *a;
 	penult = first;
 	while (penult->next->next != NULL)
 		penult = penult->next;
 	last = penult->next;
 	last->next = first;
 	penult->next = NULL;
-	*head_a = last;
+	*a = last;
 }
 
 /*
  * Function prototype for operation function pointers
  */
 
-void	stk_mod(void (*mod)(t_stack **, t_stack **), t_stack **head_a,
-		t_stack **head_b)
+void	stk_mod(void (*mod)(t_stk **, t_stk **, char c), t_stk **a, t_stk **b,
+		char c)
 {
-	return (mod(head_a, head_b));
+	return (mod(a, b, c));
 }

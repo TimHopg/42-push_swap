@@ -6,15 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:55:36 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 11:21:23 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 18:28:05 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int list_min(t_stack *head)
+int list_min(t_stk *head)
 {
-    t_stack *curr;
+    t_stk *curr;
     int min;
 
     curr = head;
@@ -27,3 +27,20 @@ int list_min(t_stack *head)
     }
     return min;
 }
+
+int list_max(t_stk *head)
+{
+    t_stk *curr;
+    int max;
+
+    curr = head;
+    max = curr->content;
+    while (curr)
+    {
+        if (curr->content > max)
+            max = curr->content;
+        curr = curr->next;
+    }
+    return max;
+}
+
