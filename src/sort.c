@@ -6,13 +6,13 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 00:28:51 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 00:30:24 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_three_ordered(t_stk **head);
+int	is_ordered(t_stk **head);
 
 /*
  * When a stack has three nodes, this function sorts them into ascending order.
@@ -21,12 +21,12 @@ int	is_three_ordered(t_stk **head);
 
 int	sort_three(t_stk **a, t_stk **b)
 {
-	if (is_three_ordered(a))
+	if (is_ordered(a))
 		return (0);
 	if ((*a)->content < (stk_last(*a))->content)
 	{
 		stk_mod(op_s, a, b, 'a');
-		if (is_three_ordered(a))
+		if (is_ordered(a))
 			return (1);
 		stk_mod(op_r, a, b, 'a');
 		return (2);
@@ -34,7 +34,7 @@ int	sort_three(t_stk **a, t_stk **b)
 	if ((*a)->content > (*a)->next->content)
 	{
 		stk_mod(op_r, a, b, 'a');
-		if (is_three_ordered(a))
+		if (is_ordered(a))
 			return (1);
 		stk_mod(op_r, a, b, 'a');
 		return (2);
@@ -47,7 +47,7 @@ int	sort_three(t_stk **a, t_stk **b)
  * Checks if nodes in list are ordered
  */
 
-int	is_three_ordered(t_stk **a)
+int	is_ordered(t_stk **a)
 {
 	t_stk *curr;
 
