@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 19:25:49 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:23:07 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,50 +31,36 @@ int main(int ac, char **av)
 {
 	t_stk *a;
 	t_stk *b;
+	t_stk *b_node;
+	t_stk *b_tail;
 
 	a = NULL;
-	b = NULL;
+	b = ft_stknew(7);
+	b_node = ft_stknew(8);
+	b_tail = ft_stknew(9);
+	ft_stkadd_back(&b, b_node);
+	ft_stkadd_back(&b, b_tail);
+
 	if (parse_input(ac, av, &a) < 0)
 		return (-1);
-		
+
 	printf("Before\n");
-	b = a;
 	ft_print_stk(a, 'a');
 	printf("\n");
 	ft_print_stk(b, 'b');
-	// stk_mod(op_s, &a, &b, 'a');
-	stk_mod(op_s, &a, &b, 'b');
+	printf("\n");
 
+	// stk_mod(op_s, &a, &b, 'b');
+	// stk_mod(op_p, &a, &b, 'b');
+	// stk_mod(op_r, &a, &b, 'r');
+	stk_mod(op_rr, &a, &b, 'r');
+	
 	// printf("%d\n", last_three(&a, &b));
 	printf("After\n");
 	ft_print_stk(a, 'a');
 	printf("\n");
 	ft_print_stk(b, 'b');
-	
+
+	free_stk(a);
+	free_stk(b);
 }
-
-/* int	main(void)
-{
-	// ft_stkadd_back(&head_b, node_b);
-	// ft_stkadd_back(&head_b, tail_b);
-
-	// printf("%d duplicates\n", is_duplicate(head_a));
-
-	printf("Before\n");
-	ft_print_stk(head_a, 'a');
-	// printf("Before\n");
-	// ft_print_stk(head_b, 'b');
-	printf("\n");
-
-	// t_stack *null_test = NULL;
-	// stk_mod(op_s, &head_a, &null_test);
-	// stk_mod(op_p, &head_a, &null_test);
-	// stk_mod(op_r, &head_a, &null_test);
-	// stk_mod(op_rr, &head_a, &null_test);
-	
-	printf("After\n");
-	ft_print_stk(head_a, 'a');
-	// printf("After\n");
-	// ft_print_stk(head_b, 'b');
-	printf("\n");
-} */

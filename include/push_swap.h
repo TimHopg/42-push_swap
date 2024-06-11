@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 18:41:53 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:57:08 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int					list_max(t_stk *head);
 
 // ops
 void				op_s(t_stk **a, t_stk **b, char c);
-void				op_p(t_stk **from, t_stk **to, char c);
+void				op_p(t_stk **a, t_stk **b, char c);
 void				op_r(t_stk **a, t_stk **b, char c);
 void				op_rr(t_stk **a, t_stk **b, char c);
 void				stk_mod(void (*mod)(t_stk **, t_stk **, char c), t_stk **a,
