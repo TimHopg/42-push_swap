@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 23:13:21 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:46:06 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,30 @@
  TODO remove char from print list
  TODO add printf, get_next_line, etc. to libft
  TODO ensure bonus doesn't relink
+ TODO receives empty string
+ TODO doubly linked list, ops receive char to determine output
+ TODO INT_MIN & INT_MAX in string
  * Have chosen to interpret -0 and +0 as valid.
 */
 
+int main(int ac, char **av)
+{
+	t_stack *head;
+
+	head = NULL;
+	head = parse_input(ac, av);
+
+	if (head == NULL)
+		return (-1);
+	// printf("Before\n");
+	ft_print_stk(head, 'a');
+	printf("%d min\n", list_min(head));
+	// printf("After\n");
+
+}
+
 /* int	main(void)
 {
-	t_stack	*head_a = ft_stknew(1);
-	t_stack	*node_a = ft_stknew(2);
-	t_stack	*node_a2 = ft_stknew(3);
-	t_stack	*node_a3 = ft_stknew(4);
-	t_stack	*tail_a = ft_stknew(5);
-
-	ft_stkadd_back(&head_a, node_a);
-	ft_stkadd_back(&head_a, node_a2);
-	ft_stkadd_back(&head_a, node_a3);
-	ft_stkadd_back(&head_a, tail_a);
-
-	// t_stack	*head_b = ft_stknew(INT_MIN);
-	// t_stack	*node_b = ft_stknew(INT_MAX);
-	// t_stack	*tail_b = ft_stknew(INT_MAX);
-	
 	// ft_stkadd_back(&head_b, node_b);
 	// ft_stkadd_back(&head_b, tail_b);
 
@@ -63,12 +67,3 @@
 	// ft_print_stk(head_b, 'b');
 	printf("\n");
 } */
-
-int main(int ac, char **av)
-{
-	t_stack *head;
-
-	head = NULL;
-	head = parse_input(ac, av);
-	ft_print_stk(head, 'a');
-}

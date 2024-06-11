@@ -6,15 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 23:14:30 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/11 11:46:57 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static t_stack	*format_list(int count, char **strings, int start);
-static int	ft_atoi_ps(const char *nptr, long *output);
-static int	is_int(long nbr);
+static int		ft_atoi_ps(const char *nptr, long *output);
+static int		is_int(long nbr);
 
 /*
  * Takes input from the command line and deserialises into linked list.
@@ -39,6 +39,8 @@ t_stack	*parse_input(int ac, char **av)
 	}
 	else
 		head = format_list(ac, av, 1);
+	// if (head == NULL)
+	// 	return (NULL);
 	if (is_duplicate(head))
 	{
 		free_stk(head);
@@ -68,7 +70,6 @@ static t_stack	*format_list(int count, char **strings, int start)
 		}
 		node = ft_stknew(nbr);
 		ft_stkadd_back(&head, node);
-		// ft_lstadd_back(&head, node);
 	}
 	return (head);
 }

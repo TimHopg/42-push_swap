@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/10 23:19:10 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/11 11:19:36 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ LIBFT_DIR = libft/
 SRC = 	deserialise.c \
 		duplicate.c \
 		list_utils.c \
+		list_utils2.c \
 		operations.c \
 		sort.c \
 		main.c

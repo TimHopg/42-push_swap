@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   list_utils2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 11:16:33 by thopgood         ###   ########.fr       */
+/*   Created: 2024/06/11 10:55:36 by thopgood          #+#    #+#             */
+/*   Updated: 2024/06/11 11:21:23 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int last_three(t_stack **head_a, t_stack **head_b)
-// {
-    
-// }
+int list_min(t_stack *head)
+{
+    t_stack *curr;
+    int min;
+
+    curr = head;
+    min = curr->content;
+    while (curr)
+    {
+        if (curr->content < min)
+            min = curr->content;
+        curr = curr->next;
+    }
+    return min;
+}
