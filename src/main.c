@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 16:22:34 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:47:44 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,34 @@
  	TODO this way a reverse rotation can be offset against a rotation to determine
 	TODO true cheapest choice.
 */
+
+
+// int smallest_to_top(t_stk **a)
+// {
+// 	int target;
+// 	int index;
+
+// 	if (*a == NULL)
+// 		return (-1);
+// 	target = list_min(*a);
+// 	index = find_node(*a, target);
+// 	if (index == 1)
+// 		return (1);
+// 	if (index < (list_len(*a) / 2))
+// 	{
+// 		while (find_node(*a, target) != 1)
+// 			stk_mod(op_r, a, a, 'a');
+// 		return (1);
+// 	}
+// 	while (find_node(*a, target) != 1)
+// 		stk_mod(op_rr, a, a, 'a');
+// 	return (1);
+// }
+
+int determine_friend(t_stk *a, t_stk *b, int data)
+{
+	
+}
 
 /*
  * Function expects 'data' to be found in list. Returns how many moves it
@@ -74,26 +102,26 @@ void best_friend(t_stk **a, t_stk **b)
 	sort_five(a, b);
 }
 
-// static int preprocessing(t_stk **a)
-// {
-// 	t_stk *b;
-// 	int stk_len;
+static int preprocessing(t_stk **a)
+{
+	t_stk *b;
+	int stk_len;
 
-// 	b = NULL;
-// 	stk_len = list_len(*a);
-// 	if(is_ordered(a))
-// 		return (1);
-// 	if (stk_len == 2)
-// 		return (stk_mod(op_s, a, &b, 'a'), 1);
-// 	if (stk_len == 3)
-// 		return (sort_three(a, &b));
-// 	if (stk_len == 4)
-// 		return (sort_four(a, &b));
-// 	if (stk_len == 5)
-// 		return (sort_five(a, &b));
-// 	best_friend(a, &b);
-// 	return (0);
-// }
+	b = NULL;
+	stk_len = list_len(*a);
+	if(is_ordered(a))
+		return (1);
+	if (stk_len == 2)
+		return (stk_mod(op_s, a, &b, 'a'), 1);
+	if (stk_len == 3)
+		return (sort_three(a, &b));
+	if (stk_len == 4)
+		return (sort_four(a, &b));
+	if (stk_len == 5)
+		return (sort_five(a, &b));
+	best_friend(a, &b);
+	return (0);
+}
 
 int main(int ac, char **av)
 {
@@ -107,8 +135,9 @@ int main(int ac, char **av)
 	ft_print_stk(a, 'a');
 
 	printf("\n");
-	printf("%d cost\n", to_top_cost(a, 5));
-	// preprocessing(&a);
+	// printf("%d cost\n", to_top_cost(a, 5));
+	// move_to_top(&a, 5);
+	preprocessing(&a);
 	printf("\n");
 
 	printf("After\n");

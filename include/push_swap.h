@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 15:51:55 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:42:50 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int					sort_three(t_stk **head_a, t_stk **head_b);
 int					sort_four(t_stk **a, t_stk **b);
 int					sort_five(t_stk **a, t_stk **b);
 int					is_ordered(t_stk **head);
-int					smallest_to_top(t_stk **a);
+// int					smallest_to_top(t_stk **a);
+int					move_to_top(t_stk **stk, int data);
 
 #endif
