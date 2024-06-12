@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 16:47:44 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:51:46 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,17 @@
 // 	return (1);
 // }
 
-int determine_friend(t_stk *a, t_stk *b, int data)
+int determine_friend(t_stk *a, int data)
 {
-	
+	t_stk *curr;
+	int friend;
+
+	curr = a;
+	friend = curr->data;
+	while (curr)
+	{
+		curr->data
+	}
 }
 
 /*
