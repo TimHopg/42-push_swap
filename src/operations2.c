@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 22:02:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/11 23:35:20 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:14:57 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,15 @@ void	reverse_rotate(t_stk **stk)
 
 void	rotate(t_stk **stk)
 {
-	t_stk	*first;
-	t_stk	*second;
+	t_stk	*curr;
 	t_stk	*last;
 
 	if (*stk == NULL || (*stk)->next == NULL)
 		return ;
-	first = *stk;
-	second = first->next;
-	last = stk_last(first);
-	last->next = first;
-	first->next = NULL;
-	*stk = second;
+
+	curr = *stk;
+	last = stk_last(*stk);
+	last->next = *stk;
+	*stk = (*stk)->next;
+	curr->next = NULL;
 }

@@ -6,42 +6,13 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 00:30:24 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:52:14 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 int	is_ordered(t_stk **head);
-
-/*
- * When a stack has three nodes, this function sorts them into ascending order.
- * First it checks if they are already in order,
- */
-
-int	sort_three(t_stk **a, t_stk **b)
-{
-	if (is_ordered(a))
-		return (0);
-	if ((*a)->content < (stk_last(*a))->content)
-	{
-		stk_mod(op_s, a, b, 'a');
-		if (is_ordered(a))
-			return (1);
-		stk_mod(op_r, a, b, 'a');
-		return (2);
-	}
-	if ((*a)->content > (*a)->next->content)
-	{
-		stk_mod(op_r, a, b, 'a');
-		if (is_ordered(a))
-			return (1);
-		stk_mod(op_r, a, b, 'a');
-		return (2);
-	}
-	stk_mod(op_rr, a, b, 'a');
-	return (1);
-}
 
 /*
  * Checks if nodes in list are ordered
@@ -60,5 +31,27 @@ int	is_ordered(t_stk **a)
 			return (0);
 		curr = curr->next;
 	}
+	return (1);
+}
+
+int smallest_to_top(t_stk **a)
+{
+	int target;
+	int index;
+
+	if (*a == NULL)
+		return (-1);
+	target = list_min(*a);
+	index = find_node(*a, target);
+	if (index == 1)
+		return (1);
+	if (index < (list_len(*a) / 2))
+	{
+		while (find_node(*a, target) != 1)
+			stk_mod(op_r, a, a, 'a');
+		return (1);
+	}
+	while (find_node(*a, target) != 1)
+		stk_mod(op_rr, a, a, 'a');
 	return (1);
 }
