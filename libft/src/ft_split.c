@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:34:02 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:07:38 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Returns array terminated with NULL pointer. NULL if fails
 
 */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static size_t	ft_countwords(char const *str, char const *set)
 {

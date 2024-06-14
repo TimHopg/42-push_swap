@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:16:00 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 15:18:12 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Mutable copies are made (and cast) to ensure byte by byte transfer.
 
 */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

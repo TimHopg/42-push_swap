@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:53:42 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:07:38 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Returns NULL if allocation fails.
 
 */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static size_t	ft_numlen(long n)
 {

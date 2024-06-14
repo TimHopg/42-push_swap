@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:11:03 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 15:18:12 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ strlcat returns the length of the string that would have been created if there
 
 */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

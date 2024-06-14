@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:28:33 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:03:42 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:24:45 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int	ft_printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-	return_length = ft_process_format(format, &args);
 	va_start(args, format);
+	return_length = ft_process_format(format, &args);
 	va_end(args);
 	return (return_length);
 }

@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 21:41:41 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 15:18:12 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:45:29 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*
-
-Returns true if char is printable (between ASCII 32 and 126 incl.)
-
-*/
-
-#include "../include/libft.h"
+ * Returns true if char is printable (between ASCII 32 and 126 incl.)
+ */
 
 int	ft_isprint(int c)
 {

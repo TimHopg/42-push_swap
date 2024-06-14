@@ -3,21 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 10:37:25 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 16:33:01 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:44:53 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*
-
-Converts ASCII to integer. Ignores leading white space. Handles single +/-
-which determines positive or negative number.
-
-*/
-
-#include "../include/libft.h"
+ * Converts ASCII to integer. Ignores leading white space. Handles single +/-
+ * which determines positive or negative number.
+ */
 
 int	ft_atoi(const char *nptr)
 {

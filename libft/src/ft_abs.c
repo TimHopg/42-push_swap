@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:52:24 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 16:54:05 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:44:25 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 /*
-
-returns the absolute value of a long
-
-*/
-
-#include "../include/libft.h"
+ *returns the absolute value of a long
+ */
 
 long	ft_abs(long n)
 {

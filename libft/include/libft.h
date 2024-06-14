@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:06:15 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:44:04 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 // standard libraries
 # include <limits.h>
+# include <stdarg.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE -1
+# endif
 
 // list struct
 typedef struct s_list
@@ -83,8 +88,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 int					ft_isspace(char c);
 void				ft_putbase_fd(int n, const char *base, int fd);
 long				ft_abs(long n);
-// char				*ft_strcpy(char *dest, const char *src);
-// char				*ft_strncpy(char *dest, const char *src, size_t count);
+char				*get_next_line(int fd);
 // size_t			ft_isinset(char const *set, const char c);
 // size_t			ft_countwords(char const *str, char const *set);
 // size_t			ft_numlen(long n);
