@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 16:42:47 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/13 20:56:06 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,6 @@ int	is_ordered(t_stk **a)
 	return (1);
 }
 
-// int smallest_to_top(t_stk **a)
-// {
-// 	int target;
-// 	int index;
-
-// 	if (*a == NULL)
-// 		return (-1);
-// 	target = list_min(*a);
-// 	index = find_node(*a, target);
-// 	if (index == 1)
-// 		return (1);
-// 	if (index < (list_len(*a) / 2))
-// 	{
-// 		while (find_node(*a, target) != 1)
-// 			stk_mod(op_r, a, a, 'a');
-// 		return (1);
-// 	}
-// 	while (find_node(*a, target) != 1)
-// 		stk_mod(op_rr, a, a, 'a');
-// 	return (1);
-// }
-
 /*
  * Moves selected node to top of list.
  */
@@ -78,4 +56,65 @@ int move_to_top(t_stk **stk, int data)
 	while (find_node(*stk, data) != 1)
 		stk_mod(op_rr, stk, stk, 'a');
 	return (0);
+}
+
+/*
+ * Function expects 'data' to be found in list. Returns how many moves it
+ * would take to move 'data' node to top. negative value is rr and positive
+ * value is r.
+ */
+
+int to_top_cost(t_stk *stk, int data)
+{
+	int index;
+	int len;
+
+	index = find_node(stk, data);
+	// printf("%d index\n", index);
+	len = list_len(stk);
+	if (index - 1 > (len / 2))
+		return (index - len - 1);
+	return (index - 1);
+}
+
+/*
+ * Determines the best friend in stack a of 'data' from stack b.
+ TODO since stk a is sorted, loop could stop when potential friends are
+ 	TODO getting worse. Maybe not because a won't always start from lowest
+ */
+
+int determine_friend(t_stk *a, int data)
+{
+	t_stk *curr;
+	int friend;
+	int first_pass;
+
+	first_pass = 1;
+	curr = a;
+	while (curr)
+	{
+		if (first_pass && curr->content > data)
+		{
+			friend = curr->content;
+			first_pass = 0;
+		}
+		else if (curr->content < friend && ((curr->content - data) > 0))
+			friend = curr->content;
+		curr = curr->next;
+	}
+	return (friend);
+}
+
+/*
+ * allocates t_friends array of length (usually length of stack b)
+ */
+
+t_friends *allocate_f_array(int len)
+{
+	t_friends *f_arr;
+
+	f_arr = malloc(sizeof(t_friends) * len); // ! does it need to be null-terminated
+	if (f_arr == NULL)
+		return NULL; // ! exit? deallocate
+	return (f_arr);
 }

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:48:58 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 16:36:48 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:07:02 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	sort_five(t_stk **a, t_stk **b);
 
 /*
  * When a stack has three nodes, this function sorts them into ascending order.
- * First it checks if they are already in order,
+ * First it checks if they are already in order, then performs the necessary
+ * operations to order them.
  */
 
 int	sort_three(t_stk **a, t_stk **b)
@@ -45,9 +46,13 @@ int	sort_three(t_stk **a, t_stk **b)
 	return (1);
 }
 
+/*
+ * Pushes the smallest element to b then uses sort_three to order and
+ * pushes the first value back to a.
+ */
+
 int	sort_four(t_stk **a, t_stk **b)
 {
-    // smallest_to_top(a);
 	move_to_top(a, list_min(*a));
     stk_mod(op_p, a, b, 'b');
     sort_three(a, b);
@@ -55,12 +60,34 @@ int	sort_four(t_stk **a, t_stk **b)
     return (1);
 }
 
+/*
+ * Same as sort_four.
+ */
+
 int	sort_five(t_stk **a, t_stk **b)
 {
-    // smallest_to_top(a);
 	move_to_top(a, list_min(*a));
     stk_mod(op_p, a, b, 'b');
     sort_four(a, b);
     stk_mod(op_p, a, b, 'a');
     return (1);
+}
+
+/*
+ * Reduces size of stack a to five. If top of stack a is lower than the mean,
+ * it is pushed to b, if it's not, stack a is rotated.
+ */
+
+void reduce_to_five(t_stk **a, t_stk **b)
+{
+	int stk_mean;
+
+	while (list_len(*a) > 5)
+	{
+		stk_mean = list_mean(*a);
+		if ((*a)->content < stk_mean)
+			stk_mod(op_p, a, b, 'b');
+		else
+			stk_mod(op_r, a, b, 'a');
+	}
 }

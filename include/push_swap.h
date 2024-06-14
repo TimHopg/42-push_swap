@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 16:42:50 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:09:49 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ typedef struct s_stack
 	int				content;
 	struct s_stack	*next;
 }					t_stk;
+
+typedef struct s_friends
+{
+	int				a_data;
+	int				b_data;
+	int				a_cost;
+	int				b_cost;
+	int				tot_cost;
+}					t_friends;
 
 // main
 void				ft_stkadd_back(t_stk **stk, t_stk *new);
@@ -54,8 +63,12 @@ int					is_duplicate(t_stk *a);
 int					sort_three(t_stk **head_a, t_stk **head_b);
 int					sort_four(t_stk **a, t_stk **b);
 int					sort_five(t_stk **a, t_stk **b);
+void				reduce_to_five(t_stk **a, t_stk **b);
 int					is_ordered(t_stk **head);
-// int					smallest_to_top(t_stk **a);
+int					to_top_cost(t_stk *stk, int data);
 int					move_to_top(t_stk **stk, int data);
+t_friends			*allocate_f_array(int len);
+int					determine_friend(t_stk *a, int data);
+t_friends			*build_f_array(t_stk **a, t_stk **b);
 
 #endif

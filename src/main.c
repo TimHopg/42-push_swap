@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 17:51:46 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:38:01 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,80 +34,25 @@
  TODO working out number of moves to the top, return a positive or negative number.
  	TODO this way a reverse rotation can be offset against a rotation to determine
 	TODO true cheapest choice.
+ TODO - might need a pointer to the friends struct?
 */
 
-
-// int smallest_to_top(t_stk **a)
-// {
-// 	int target;
-// 	int index;
-
-// 	if (*a == NULL)
-// 		return (-1);
-// 	target = list_min(*a);
-// 	index = find_node(*a, target);
-// 	if (index == 1)
-// 		return (1);
-// 	if (index < (list_len(*a) / 2))
-// 	{
-// 		while (find_node(*a, target) != 1)
-// 			stk_mod(op_r, a, a, 'a');
-// 		return (1);
-// 	}
-// 	while (find_node(*a, target) != 1)
-// 		stk_mod(op_rr, a, a, 'a');
-// 	return (1);
-// }
-
-int determine_friend(t_stk *a, int data)
-{
-	t_stk *curr;
-	int friend;
-
-	curr = a;
-	friend = curr->data;
-	while (curr)
-	{
-		curr->data
-	}
-}
-
-/*
- * Function expects 'data' to be found in list. Returns how many moves it
- * would take to move 'data' node to top. negative value is rr and positive
- * value is r.
- */
-
-int to_top_cost(t_stk *stk, int data)
-{
-	int index;
-	int len;
-
-	index = find_node(stk, data);
-	len = list_len(stk);
-	if (index - 1 > (len / 2))
-		return (index - len - 1);
-	return (index - 1);
-}
-
-void reduce_to_five(t_stk **a, t_stk **b)
-{
-	int stk_mean;
-
-	while (list_len(*a) > 5)
-	{
-		stk_mean = list_mean(*a);
-		if ((*a)->content < stk_mean)
-			stk_mod(op_p, a, b, 'b');
-		else
-			stk_mod(op_r, a, b, 'a');
-	}
-}
+// find_cheapest;
 
 void best_friend(t_stk **a, t_stk **b)
 {
+	t_friends *f_arr;
+	int b_len;
+
 	reduce_to_five(a, b);
 	sort_five(a, b);
+	// while (list_len(*b) > 0)
+	// {}
+	f_arr = build_f_array(a, b);
+	// find_cheapest(f_arr);
+	ft_print_stk(*b, 'b');
+	// printf("%d friend\n", determine_friend(*a, (*b)->next->next->content));
+	printf("\n");
 }
 
 static int preprocessing(t_stk **a)

@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/12 13:48:37 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/13 20:56:31 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC = 	deserialise.c \
 		operations.c \
 		operations2.c \
 		sort.c \
+		sort2.c \
 		sortfive.c \
 		main.c
 
