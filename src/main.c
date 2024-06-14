@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/13 21:38:01 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 16:48:17 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,85 @@
  TODO - might need a pointer to the friends struct?
 */
 
-// find_cheapest;
+// void same_sign(t_stk **a, t_stk ** b, t_friends *t_arr, int i)
+// {
+	
+// }
+
+void push_cheapest(t_stk **a, t_stk ** b, t_friends *t_arr, int i)
+{
+	int n;
+	// char c;
+	int a_c = t_arr[i].a_cost;
+	int b_c = t_arr[i].b_cost;
+	void (*op_func)(t_stk **, t_stk **, char);
+
+	n = 0;
+	printf("%d a_c\n", a_c);
+	printf("%d b_c\n", b_c);
+	op_func = op_r;
+	if ((a_c >= 0 && b_c >= 0) || (a_c <= 0 && b_c <= 0))
+	{
+		if (a_c <= 0 && b_c <= 0)
+			op_func = op_rr;
+		if (a_c > b_c)
+			n = b_c;
+		else
+			n = a_c;
+		while (n-- > 0)
+			stk_mod(op_func, a, b, 'r');
+		n = 0;
+		if (abs(a_c) >= abs(b_c))
+			while (n++ < abs(a_c - b_c))
+				stk_mod(op_func, a, b, 'a');
+		else
+			while (n++ < abs(b_c - a_c))
+				stk_mod(op_func, a, b, 'b');
+	}
+	else
+	{
+		if (a_c > 0)
+	}
+	stk_mod(op_p, a, b, 'a');
+}
+
+void find_cheapest(t_friends *t_arr, int b_len, t_stk **a, t_stk **b)
+{
+	int i;
+	int lowest_cost;
+	int cheap_index;
+
+	(void)a;
+	(void)b;
+	i = 0;
+	cheap_index = i;
+	lowest_cost = t_arr[i].tot_cost;
+	while (i < b_len)
+	{
+		if (t_arr[i].tot_cost < lowest_cost)
+		{
+			lowest_cost = t_arr[i].tot_cost;
+			cheap_index = i;
+		}
+		i++;
+	}
+	printf("%d cheapest index at cost of -> %d\n", cheap_index, lowest_cost);
+	push_cheapest(a, b, t_arr, cheap_index);
+	// free(t_arr);
+}
 
 void best_friend(t_stk **a, t_stk **b)
 {
-	t_friends *f_arr;
+	t_friends *t_arr;
 	int b_len;
 
 	reduce_to_five(a, b);
 	sort_five(a, b);
+	b_len = list_len(*b);
 	// while (list_len(*b) > 0)
 	// {}
-	f_arr = build_f_array(a, b);
-	// find_cheapest(f_arr);
+	t_arr = build_f_array(a, b);
+	find_cheapest(t_arr, b_len, a, b);
 	ft_print_stk(*b, 'b');
 	// printf("%d friend\n", determine_friend(*a, (*b)->next->next->content));
 	printf("\n");
@@ -96,7 +162,7 @@ int main(int ac, char **av)
 	printf("After\n");
 	ft_print_stk(a, 'a');
 
-
+	printf("%d tot cost\n", tot_cost(-3, 0));
 
 	// best_friend(&a);
 	

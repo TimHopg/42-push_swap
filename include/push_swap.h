@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/13 21:09:49 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:59:19 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ int					move_to_top(t_stk **stk, int data);
 t_friends			*allocate_f_array(int len);
 int					determine_friend(t_stk *a, int data);
 t_friends			*build_f_array(t_stk **a, t_stk **b);
+int					tot_cost(int a, int b);
 
 #endif
