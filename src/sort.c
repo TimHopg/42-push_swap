@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 23:10:47 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:30:12 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ int	to_top_cost(t_stk *stk, int data)
 
 /*
  * Determines the best friend in stack a of 'data' from stack b.
- TODO since stk a is sorted, loop could stop when potential friends are
-	TODO getting worse. Maybe not because a won't always start from lowest
+ * To optimise: since stk a is sorted, loop could stop when potential
+ * friends are getting worse.
  */
 
 int	determine_friend(t_stk *a, int data)

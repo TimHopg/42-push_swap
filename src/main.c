@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 23:22:40 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:42:23 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
  TODO ft_printstk ft_printf
  TODO add printf, get_next_line, etc. to libft
  TODO ensure bonus doesn't relink
+ TODO visualiser
  * Have chosen to interpret -0 and +0 as valid.
  * Uses a best friend type algorithm but optimised to share operations.
  * This algorithm is operation cheap but comparison expensive.
