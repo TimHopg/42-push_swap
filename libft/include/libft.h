@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/10 11:11:14 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:06:15 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 // list struct
 typedef struct s_list
@@ -86,7 +87,23 @@ long				ft_abs(long n);
 // char				*ft_strncpy(char *dest, const char *src, size_t count);
 // size_t			ft_isinset(char const *set, const char c);
 // size_t			ft_countwords(char const *str, char const *set);
-// long				ft_abs(long n);
 // size_t			ft_numlen(long n);
+
+// ft_printf
+# define HEXUPPER_BASE "0123456789ABCDEF"
+# define HEXLOWER_BASE "0123456789abcdef"
+# define HEX_PREF "0x"
+# define NIL_MSG "(nil)"
+# define DEC_BASE "0123456789"
+# define NULL_MSG "(null)"
+
+int					ft_printdigit(long n, const char *base);
+int					ft_printudigit(unsigned long long n, const char *base);
+int					ft_printhex(unsigned long long n, char c);
+int					ft_printptr(unsigned long long ptr);
+int					ft_printdec(long n);
+int					ft_printchar(int c);
+int					ft_printstr(char *str);
+int					ft_printf(const char *format, ...);
 
 #endif

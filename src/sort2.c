@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:56:34 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:57:51 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:06:18 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	tot_cost(int a, int b)
 {
 	if ((a >= 0 && b >= 0) || (a <= 0 && b <= 0))
 	{
-		a = abs(a);
-		b = abs(b);
+		a = ft_abs(a);
+		b = ft_abs(b);
 		if (a > b)
 			return (a);
 		return (b);
 	}
-	return (abs(a - b));
+	return (ft_abs(a - b));
 }
 
 /*
@@ -77,18 +77,18 @@ static void	same_sign(t_stk **a, t_stk **b, int a_c, int b_c)
 	op_func = op_r;
 	if (a_c <= 0 && b_c <= 0)
 		op_func = op_rr;
-	if (abs(a_c) > abs(b_c))
-		n = abs(b_c);
+	if (ft_abs(a_c) > ft_abs(b_c))
+		n = ft_abs(b_c);
 	else
-		n = abs(a_c);
+		n = ft_abs(a_c);
 	while (n-- > 0)
 		stk_mod(op_func, a, b, 'r');
 	n = 0;
-	if (abs(a_c) >= abs(b_c))
-		while (n++ < abs(a_c - b_c))
+	if (ft_abs(a_c) >= ft_abs(b_c))
+		while (n++ < ft_abs(a_c - b_c))
 			stk_mod(op_func, a, b, 'a');
 	else
-		while (n++ < abs(b_c - a_c))
+		while (n++ < ft_abs(b_c - a_c))
 			stk_mod(op_func, a, b, 'b');
 }
 

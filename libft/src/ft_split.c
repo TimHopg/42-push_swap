@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:34:02 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 17:08:59 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:07:38 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,11 +110,11 @@ int	main(void)
 	str = " ";;
 	c = ' ';
 	words = ft_split(str, c);
-	printf(":%s:\n", words[0]);
-	printf(":%s:\n", words[1]);
-	printf(":%s:\n", words[2]);
-	printf(":%s:\n", words[3]);
-	printf(":%s:\n", words[4]);
-	printf(":%s:\n", words[5]);
+	ft_printf(":%s:\n", words[0]);
+	ft_printf(":%s:\n", words[1]);
+	ft_printf(":%s:\n", words[2]);
+	ft_printf(":%s:\n", words[3]);
+	ft_printf(":%s:\n", words[4]);
+	ft_printf(":%s:\n", words[5]);
 }
 */

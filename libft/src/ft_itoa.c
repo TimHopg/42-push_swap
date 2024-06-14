@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thopgood <thopgood@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:53:42 by thopgood          #+#    #+#             */
-/*   Updated: 2024/04/23 16:54:33 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:07:38 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ int	main(void)
 	int n;
 
 	n = INT_MIN;
-	printf("%s res\n", ft_itoa(n));
+	ft_printf("%s res\n", ft_itoa(n));
 } */

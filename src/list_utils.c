@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 18:57:27 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 23:07:32 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:12:07 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_print_stk(t_stk *head, char c)
 	curr = head;
 	while (curr)
 	{
-		printf("stk[%c] Node[%d]: %d\n", c, i++, curr->content);
+		ft_printf("stk[%c] Node[%d]: %d\n", c, i++, curr->content);
 		curr = curr->next;
 	}
 }
