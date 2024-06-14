@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 22:02:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/12 13:14:57 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 22:57:04 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ void	rotate(t_stk **stk)
 
 	if (*stk == NULL || (*stk)->next == NULL)
 		return ;
-
 	curr = *stk;
 	last = stk_last(*stk);
 	last->next = *stk;

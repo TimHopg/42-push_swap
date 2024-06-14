@@ -6,15 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:48:58 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/13 21:07:02 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 22:56:44 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_three(t_stk **a, t_stk **b);
-int	sort_four(t_stk **a, t_stk **b);
-int	sort_five(t_stk **a, t_stk **b);
+int		sort_three(t_stk **a, t_stk **b);
+int		sort_four(t_stk **a, t_stk **b);
+int		sort_five(t_stk **a, t_stk **b);
 
 /*
  * When a stack has three nodes, this function sorts them into ascending order.
@@ -54,10 +54,10 @@ int	sort_three(t_stk **a, t_stk **b)
 int	sort_four(t_stk **a, t_stk **b)
 {
 	move_to_top(a, list_min(*a));
-    stk_mod(op_p, a, b, 'b');
-    sort_three(a, b);
-    stk_mod(op_p, a, b, 'a');
-    return (1);
+	stk_mod(op_p, a, b, 'b');
+	sort_three(a, b);
+	stk_mod(op_p, a, b, 'a');
+	return (1);
 }
 
 /*
@@ -67,10 +67,10 @@ int	sort_four(t_stk **a, t_stk **b)
 int	sort_five(t_stk **a, t_stk **b)
 {
 	move_to_top(a, list_min(*a));
-    stk_mod(op_p, a, b, 'b');
-    sort_four(a, b);
-    stk_mod(op_p, a, b, 'a');
-    return (1);
+	stk_mod(op_p, a, b, 'b');
+	sort_four(a, b);
+	stk_mod(op_p, a, b, 'a');
+	return (1);
 }
 
 /*
@@ -78,9 +78,9 @@ int	sort_five(t_stk **a, t_stk **b)
  * it is pushed to b, if it's not, stack a is rotated.
  */
 
-void reduce_to_five(t_stk **a, t_stk **b)
+void	reduce_to_five(t_stk **a, t_stk **b)
 {
-	int stk_mean;
+	int	stk_mean;
 
 	while (list_len(*a) > 5)
 	{

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:55:36 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 10:15:41 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 22:57:17 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,9 @@ int	list_max(t_stk *head)
  * Returns length of list
  */
 
-int list_len(t_stk *stk)
+int	list_len(t_stk *stk)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (!stk)
@@ -75,10 +75,10 @@ int list_len(t_stk *stk)
  * Returns mean of data values from list.
  */
 
-float list_mean(t_stk *stk)
+float	list_mean(t_stk *stk)
 {
-	float f;
-	int len;
+	float	f;
+	int		len;
 
 	f = 0;
 	if (stk == NULL)
@@ -97,9 +97,9 @@ float list_mean(t_stk *stk)
  * Returns 0 if not found.
  */
 
-int find_node(t_stk *a, int x)
+int	find_node(t_stk *a, int x)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	if (a == NULL)
@@ -108,7 +108,7 @@ int find_node(t_stk *a, int x)
 	{
 		n++;
 		if (a->content == x)
-			return (n); 
+			return (n);
 		a = a->next;
 	}
 	return (0);

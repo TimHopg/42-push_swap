@@ -6,13 +6,13 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/13 20:56:06 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 22:56:58 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_ordered(t_stk **head);
+int			is_ordered(t_stk **head);
 
 /*
  * Checks if nodes in list are ordered
@@ -20,7 +20,7 @@ int	is_ordered(t_stk **head);
 
 int	is_ordered(t_stk **a)
 {
-	t_stk *curr;
+	t_stk	*curr;
 
 	curr = *a;
 	if (*a == NULL || (*a)->next == NULL)
@@ -38,9 +38,9 @@ int	is_ordered(t_stk **a)
  * Moves selected node to top of list.
  */
 
-int move_to_top(t_stk **stk, int data)
+int	move_to_top(t_stk **stk, int data)
 {
-	int index;
+	int	index;
 
 	if (*stk == NULL)
 		return (-1);
@@ -64,10 +64,10 @@ int move_to_top(t_stk **stk, int data)
  * value is r.
  */
 
-int to_top_cost(t_stk *stk, int data)
+int	to_top_cost(t_stk *stk, int data)
 {
-	int index;
-	int len;
+	int	index;
+	int	len;
 
 	index = find_node(stk, data);
 	// printf("%d index\n", index);
@@ -80,14 +80,14 @@ int to_top_cost(t_stk *stk, int data)
 /*
  * Determines the best friend in stack a of 'data' from stack b.
  TODO since stk a is sorted, loop could stop when potential friends are
- 	TODO getting worse. Maybe not because a won't always start from lowest
+	TODO getting worse. Maybe not because a won't always start from lowest
  */
 
-int determine_friend(t_stk *a, int data)
+int	determine_friend(t_stk *a, int data)
 {
-	t_stk *curr;
-	int friend;
-	int first_pass;
+	t_stk	*curr;
+	int		friend;
+	int		first_pass;
 
 	first_pass = 1;
 	curr = a;
@@ -109,12 +109,12 @@ int determine_friend(t_stk *a, int data)
  * allocates t_friends array of length (usually length of stack b)
  */
 
-t_friends *allocate_f_array(int len)
+t_friends	*allocate_f_array(int len)
 {
-	t_friends *f_arr;
+	t_friends	*f_arr;
 
-	f_arr = malloc(sizeof(t_friends) * len); // ! does it need to be null-terminated
+	f_arr = malloc(sizeof(t_friends) * len);
 	if (f_arr == NULL)
-		return NULL; // ! exit? deallocate
+		return (NULL); // ! exit? deallocate
 	return (f_arr);
 }
