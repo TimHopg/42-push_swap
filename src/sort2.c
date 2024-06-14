@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:56:34 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 14:35:58 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 20:59:51 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ t_friends *build_f_array(t_stk **a, t_stk **b)
 	while (i < len_b)
 	{
 		f_arr[i].b_data = curr->content;
-		printf("%d b_data [%d]\n", f_arr[i].b_data, i);
+		// printf("%d b_data [%d]\n", f_arr[i].b_data, i);
 		f_arr[i].a_data = determine_friend(*a, f_arr[i].b_data);
-		printf("%d a_data [%d]\n", f_arr[i].a_data, i);
+		// printf("%d a_data [%d]\n", f_arr[i].a_data, i);
 		f_arr[i].a_cost = to_top_cost(*a, f_arr[i].a_data);
-		printf("%d a cost [%d]\n", f_arr[i].a_cost, i);
+		// printf("%d a cost [%d]\n", f_arr[i].a_cost, i);
 		f_arr[i].b_cost = to_top_cost(*b, f_arr[i].b_data);
-		printf("%d b cost [%d]\n", f_arr[i].b_cost, i);
+		// printf("%d b cost [%d]\n", f_arr[i].b_cost, i);
 		f_arr[i].tot_cost = tot_cost(f_arr[i].a_cost, f_arr[i].b_cost);
-		printf("%d tot cost [%d]\n", f_arr[i].tot_cost, i);
+		// printf("%d tot cost [%d]\n", f_arr[i].tot_cost, i);
 		i++;
 		curr = curr-> next;
 	}

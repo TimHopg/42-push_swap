@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 16:48:17 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 20:59:12 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,47 +37,81 @@
  TODO - might need a pointer to the friends struct?
 */
 
-// void same_sign(t_stk **a, t_stk ** b, t_friends *t_arr, int i)
-// {
-	
-// }
+/*
+ * Prepares stacks for cheapest push from b to when both moves to get a and b to
+ * the top are positive or both moves are negative.
+ */
 
-void push_cheapest(t_stk **a, t_stk ** b, t_friends *t_arr, int i)
+void same_sign(t_stk **a, t_stk ** b, int a_c, int b_c)
 {
 	int n;
-	// char c;
-	int a_c = t_arr[i].a_cost;
-	int b_c = t_arr[i].b_cost;
 	void (*op_func)(t_stk **, t_stk **, char);
 
 	n = 0;
-	printf("%d a_c\n", a_c);
-	printf("%d b_c\n", b_c);
 	op_func = op_r;
-	if ((a_c >= 0 && b_c >= 0) || (a_c <= 0 && b_c <= 0))
-	{
-		if (a_c <= 0 && b_c <= 0)
-			op_func = op_rr;
-		if (a_c > b_c)
-			n = b_c;
-		else
-			n = a_c;
-		while (n-- > 0)
-			stk_mod(op_func, a, b, 'r');
-		n = 0;
-		if (abs(a_c) >= abs(b_c))
-			while (n++ < abs(a_c - b_c))
-				stk_mod(op_func, a, b, 'a');
-		else
-			while (n++ < abs(b_c - a_c))
-				stk_mod(op_func, a, b, 'b');
-	}
+	if (a_c <= 0 && b_c <= 0)
+		op_func = op_rr;
+	if (abs(a_c) > abs(b_c))
+		n = abs(b_c);
 	else
-	{
-		if (a_c > 0)
-	}
+		n = abs(a_c);
+	while (n-- > 0)
+		stk_mod(op_func, a, b, 'r');
+	n = 0;
+	if (abs(a_c) >= abs(b_c))
+		while (n++ < abs(a_c - b_c))
+			stk_mod(op_func, a, b, 'a');
+	else
+		while (n++ < abs(b_c - a_c))
+			stk_mod(op_func, a, b, 'b');
+}
+
+/*
+ * Prepares stacks for cheapest push from b to when moves to get a and b to the
+ * top of their respective stack are different i.e. one is 'rr' and one is 'r'.
+ */
+
+void diff_sign(t_stk **a, t_stk ** b, int a_c, int b_c)
+{
+	int n;
+
+	n = 0;
+	if (a_c > 0)
+		while (n++ < a_c)
+			stk_mod(op_r, a, b, 'a');
+	else
+		while (n-- > a_c)
+			stk_mod(op_rr, a, b, 'a');
+	n = 0;
+	if (b_c > 0)
+		while (n++ < b_c)
+			stk_mod(op_r, a, b, 'b');
+	else
+		while (n-- > b_c)
+			stk_mod(op_rr, a, b, 'b');
+}
+
+/*
+ * Moves cheapest pair to top of their respective stacks and pushes from b to a
+ */
+
+// TODO needs checking
+
+void push_cheapest(t_stk **a, t_stk ** b, t_friends *t_arr, int i)
+{
+	int a_c = t_arr[i].a_cost;
+	int b_c = t_arr[i].b_cost;
+
+	if ((a_c >= 0 && b_c >= 0) || (a_c <= 0 && b_c <= 0))
+		same_sign(a, b, a_c, b_c);
+	else
+		diff_sign(a, b, a_c, b_c);
 	stk_mod(op_p, a, b, 'a');
 }
+
+/*
+ * Finds cheapest total cost 'tot_cost' from stack b and each node's best friend
+ */
 
 void find_cheapest(t_friends *t_arr, int b_len, t_stk **a, t_stk **b)
 {
@@ -85,8 +119,6 @@ void find_cheapest(t_friends *t_arr, int b_len, t_stk **a, t_stk **b)
 	int lowest_cost;
 	int cheap_index;
 
-	(void)a;
-	(void)b;
 	i = 0;
 	cheap_index = i;
 	lowest_cost = t_arr[i].tot_cost;
@@ -99,10 +131,27 @@ void find_cheapest(t_friends *t_arr, int b_len, t_stk **a, t_stk **b)
 		}
 		i++;
 	}
-	printf("%d cheapest index at cost of -> %d\n", cheap_index, lowest_cost);
 	push_cheapest(a, b, t_arr, cheap_index);
-	// free(t_arr);
+	free(t_arr);
 }
+
+/*
+ * Rotates stack a until top number is lowest.
+ ! Optimise, if min is lower than halfway
+ */
+
+void rotate_a(t_stk **a)
+{
+	int min;
+
+	min = list_min(*a);
+	while ((*a)->content != min)
+		stk_mod(op_r, a, a, 'a');
+}
+
+/*
+ * Calls each function to implement algorithm
+ */
 
 void best_friend(t_stk **a, t_stk **b)
 {
@@ -111,15 +160,20 @@ void best_friend(t_stk **a, t_stk **b)
 
 	reduce_to_five(a, b);
 	sort_five(a, b);
-	b_len = list_len(*b);
-	// while (list_len(*b) > 0)
-	// {}
-	t_arr = build_f_array(a, b);
-	find_cheapest(t_arr, b_len, a, b);
-	ft_print_stk(*b, 'b');
-	// printf("%d friend\n", determine_friend(*a, (*b)->next->next->content));
-	printf("\n");
+	while (list_len(*b) > 0)
+	{
+		b_len = list_len(*b);
+		t_arr = build_f_array(a, b);
+		find_cheapest(t_arr, b_len, a, b);
+	}
+	rotate_a(a);
+	free_stk(*b);
 }
+
+/*
+ * Handles stacks < 5 in length and stacks already ordered.
+ * Then calls algorithm.
+ */
 
 static int preprocessing(t_stk **a)
 {
@@ -150,38 +204,16 @@ int main(int ac, char **av)
 	if (parse_input(ac, av, &a) < 0)
 		return (-1);
 	
-	printf("Before\n");
-	ft_print_stk(a, 'a');
-
-	printf("\n");
-	// printf("%d cost\n", to_top_cost(a, 5));
-	// move_to_top(&a, 5);
-	preprocessing(&a);
-	printf("\n");
-
-	printf("After\n");
-	ft_print_stk(a, 'a');
-
-	printf("%d tot cost\n", tot_cost(-3, 0));
-
-	// best_friend(&a);
-	
-	// ft_print_stk(b, 'b');
-	// printf("\n");
-
-	// stk_mod(op_s, &a, &b, 'b');
-	// stk_mod(op_p, &a, &b, 'b');
-	// stk_mod(op_r, &a, &b, 'r');
-	// stk_mod(op_rr, &a, &b, 'r');
-	// sort_three(&a, &b);
-	
-	// printf("%d\n", sort_three(&a, &b));
-	// printf("After\n");
+	// printf("Before\n");
 	// ft_print_stk(a, 'a');
 	// printf("\n");
-	// ft_print_stk(b, 'b');
 
-	// free_stk(a);
-	// free_stk(b);
+	preprocessing(&a);
+
+	// printf("\n");
+	// printf("After\n");
+	// ft_print_stk(a, 'a');
+
+	free_stk(a);
 	return (0);
 }
