@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 19:27:57 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/11 15:48:49 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/14 23:05:16 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ SRC			= 	ft_isalpha.c \
 				ft_lstclear.c \
 				ft_lstiter.c \
 				ft_lstmap.c \
-				# fr_printf.c \
+				# ft_printf.c \
 				# get_next_line.c \
 				# putnbr_base.c
 

@@ -6,30 +6,20 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:57:11 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:22:40 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- TODO remove all printfs
- TODO could add count each time operations are called, they could return
-	TODO number of operations. count +=
- TODO make sure if there are no arguments, nothing happens
- TODO Count operations as they are being printed
  TODO Error handling and freeing
- TODO remove char from print list
+ TODO ft_printstk ft_printf
  TODO add printf, get_next_line, etc. to libft
  TODO ensure bonus doesn't relink
- TODO receives empty string
- TODO INT_MIN & INT_MAX in string
- TODO could mean have to be a float. Check accuracy too
- TODO best friend can be optimised to share rotations
  * Have chosen to interpret -0 and +0 as valid.
+ * Uses a best friend type algorithm but optimised to share operations.
  * This algorithm is operation cheap but comparison expensive.
- ? What so best friends are shared. What if the bigger of the two is
-	? popped first??? Are the best friends calculated after each pop?
 */
 
 /*
@@ -94,6 +84,7 @@ int	main(int ac, char **av)
 // printf("Before\n");
 // ft_print_stk(a, 'a');
 // printf("\n");
+
 // printf("\n");
 // printf("After\n");
 // ft_print_stk(a, 'a');

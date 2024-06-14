@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:48:58 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:56:44 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:18:59 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	sort_three(t_stk **a, t_stk **b)
 int	sort_four(t_stk **a, t_stk **b)
 {
 	move_to_top(a, list_min(*a));
+	if (is_ordered(a) == 1)
+		return (1);
 	stk_mod(op_p, a, b, 'b');
 	sort_three(a, b);
 	stk_mod(op_p, a, b, 'a');
@@ -67,6 +69,8 @@ int	sort_four(t_stk **a, t_stk **b)
 int	sort_five(t_stk **a, t_stk **b)
 {
 	move_to_top(a, list_min(*a));
+	if (is_ordered(a) == 1)
+		return (1);
 	stk_mod(op_p, a, b, 'b');
 	sort_four(a, b);
 	stk_mod(op_p, a, b, 'a');

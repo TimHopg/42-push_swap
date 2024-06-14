@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:56:58 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/14 23:10:47 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	to_top_cost(t_stk *stk, int data)
 	int	len;
 
 	index = find_node(stk, data);
-	// printf("%d index\n", index);
 	len = list_len(stk);
 	if (index - 1 > (len / 2))
 		return (index - len - 1);
