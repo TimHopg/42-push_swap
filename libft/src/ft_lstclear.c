@@ -6,18 +6,16 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 13:32:31 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:51:59 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Deletes and frees each node in a list 'lst' and sets the pointer to the list
-	to NULL
-
-*/
-
 #include "libft.h"
+
+/*
+ * Deletes and frees each node in a list 'lst' and sets the pointer to the list
+ * to NULL
+ */
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

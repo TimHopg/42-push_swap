@@ -6,18 +6,16 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 20:44:18 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:58:46 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Compares string s1 with string s2 for n bytes or until characters differ.
-Returns difference between s1 and s2.
-
-*/
-
 #include "libft.h"
+
+/*
+ * Compares string s1 with string s2 for n bytes or until characters differ.
+ * Returns difference between s1 and s2.
+ */
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

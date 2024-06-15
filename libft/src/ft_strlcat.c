@@ -6,21 +6,19 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 16:11:03 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:00:23 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Appends at most dstsize - 1 characters of src to dst and null terminates,
-	truncating if necessary.
-If dst is longer than dstsize, dst will not be changed.
-strlcat returns the length of the string that would have been created if there
-	was enough size. If return >= size truncation has occurred.
-
-*/
-
 #include "libft.h"
+
+/*
+ * Appends at most dstsize - 1 characters of src to dst and null terminates,
+ * truncating if necessary.
+ * If dst is longer than dstsize, dst will not be changed.
+ * strlcat returns the length of the string that would have been created if there
+ * was enough size. If return >= size truncation has occurred.
+ */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

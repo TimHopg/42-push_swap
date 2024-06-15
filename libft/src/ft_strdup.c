@@ -6,18 +6,16 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:55:45 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:01:10 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-String duplication. Allocates memory using malloc for new string and copies
-	contents of original string incl. null termination.
-
-*/
-
 #include "libft.h"
+
+/*
+ * String duplication. Allocates memory using malloc for new string and copies
+ * contents of original string incl. null termination.
+ */
 
 char	*ft_strdup(const char *s)
 {

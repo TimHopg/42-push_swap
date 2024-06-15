@@ -6,23 +6,20 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 19:54:53 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:59:57 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Copies at most dstsize - 1 bytes from src to dest truncating src if necessary.
-The destination string is always null terminated.
-Returns total length of string that was attempted to create (len of src).
-
-Check for buffer overflow as follows:
-if (strlcpy(dst, src, dstsize) >= dstsize)
-        return −1;
-		
-*/
-
 #include "libft.h"
+
+/*
+ * Copies at most dstsize - 1 bytes from src to dest truncating src if necessary.
+ * The destination string is always null terminated.
+ * Returns total length of string that was attempted to create (len of src).
+ * Check for buffer overflow as follows:
+ * if (strlcpy(dst, src, dstsize) >= dstsize)
+ * 		return −1;	
+ */
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {

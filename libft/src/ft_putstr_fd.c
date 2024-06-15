@@ -6,17 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:55:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:53:07 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Outputs string 's' to given file descriptor.
-
-*/
-
 #include "libft.h"
+
+/*
+ * Outputs string 's' to given file descriptor.
+ */
 
 void	ft_putstr_fd(char *s, int fd)
 {

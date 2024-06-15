@@ -6,17 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 16:45:41 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:50:10 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Iterates and returns count of list 'lst' size.
-
-*/
-
 #include "libft.h"
+
+/*
+ * Iterates and returns count of list 'lst' size.
+ */
 
 int	ft_lstsize(t_list *lst)
 {

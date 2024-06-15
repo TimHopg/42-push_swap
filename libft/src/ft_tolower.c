@@ -6,15 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:29:57 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:11 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:01:44 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
  * Converts uppercase char to lower
  */
-
-#include "libft.h"
 
 int	ft_tolower(int c)
 {

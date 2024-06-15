@@ -6,19 +6,17 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 09:53:42 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:49:57 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
-
-Integer to ASCII
-Returns a mallocated string representing the integer passed as an argument.
-Returns NULL if allocation fails.
-
-*/
-
 #include "libft.h"
+
+/* 
+ * Integer to ASCII
+ * Returns a mallocated string representing the integer passed as an argument.
+ * Returns NULL if allocation fails.
+ */
 
 static size_t	ft_numlen(long n)
 {

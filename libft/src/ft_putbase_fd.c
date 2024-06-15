@@ -6,17 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 16:47:12 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:54:04 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-outputs int n in base to file fd
-
-*/
-
 #include "libft.h"
+
+/*
+ * outputs int n in base to file fd
+ */
 
 void	ft_putbase_fd(int n, const char *base, int fd)
 {

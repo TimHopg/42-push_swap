@@ -6,23 +6,20 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 19:17:24 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:58:30 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Needle in haystack. Locates little string within big string if found within
-	first len bytes.
-
-Returns:
-- Pointer to first occurrence
-- NULL if not found
-- Pointer to big if little == 0
-
-*/
-
 #include "libft.h"
+
+/*
+ * Needle in haystack. Locates little string within big string if found within
+ * first len bytes.
+ * Returns:
+ * - Pointer to first occurrence
+ * - NULL if not found
+ * - Pointer to big if little == 0
+ */
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

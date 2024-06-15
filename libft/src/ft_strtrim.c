@@ -6,19 +6,17 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:36:56 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 00:57:36 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-
-Returns a malloc allocated copy of s1 with the chars from set removed
-	from the beginning and end.
-Returns a ptr to the trimmed string or NULL if it fails
-
-*/
-
 #include "libft.h"
+
+/*
+ * Returns a malloc allocated copy of s1 with the chars from set removed
+ * from the beginning and end.
+ * Returns a ptr to the trimmed string or NULL if it fails
+ */
 
 static size_t	ft_offsetstart(const char *str, char const *set)
 {
@@ -69,5 +67,5 @@ int	main(void)
 	str = "";
 	out = NULL;
 	out = ft_strtrim(str, set);
-	printf("%s\n", out);
+	ft_printf("%s\n", out);
 } */

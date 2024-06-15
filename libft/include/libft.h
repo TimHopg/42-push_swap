@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 19:24:25 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:44:04 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:07:20 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-// prototypes
 // libc
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

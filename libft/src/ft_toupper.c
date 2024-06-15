@@ -6,17 +6,15 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 17:27:25 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:39:57 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:01:35 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
-
-Converts lowercase char to uppercase
-
-*/
-
 #include "libft.h"
+
+/* 
+ * Converts lowercase char to uppercase
+ */
 
 int	ft_toupper(int c)
 {

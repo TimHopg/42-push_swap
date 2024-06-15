@@ -6,18 +6,16 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:28:08 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:42:00 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:00:37 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* 
-
-Allocates with malloc and returns new string, s1 + s2.
-Returns ptr to new string or NULL if fails.
- 
-*/
-
 #include "libft.h"
+
+/* 
+ * Allocates with malloc and returns new string, s1 + s2.
+ * Returns ptr to new string or NULL if fails.
+ */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
