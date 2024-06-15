@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:09:32 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 01:16:23 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 /*
  TODO Error handling and freeing
- TODO ft_printstk ft_printf
- TODO add ft_printf, get_next_line, etc. to libft
  TODO ensure bonus doesn't relink
  TODO visualiser
  * Have chosen to interpret -0 and +0 as valid.
@@ -77,13 +75,7 @@ int	main(int ac, char **av)
 	a = NULL;
 	if (parse_input(ac, av, &a) < 0)
 		return (-1);
-	ft_printf("Before\n");
-	ft_print_stk(a, 'a');
-	ft_printf("\n");
 	preprocessing(&a);
-	ft_printf("\n");
-	ft_printf("After\n");
-	ft_print_stk(a, 'a');
 	free_stk(a);
 	return (0);
 }
