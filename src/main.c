@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 18:50:14 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 19:05:48 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
  TODO ensure bonus doesn't relink
  TODO visualiser
  TODO check leaks at school. "1 2 3" "" 1 2 3, etc.
+ TODO check what the checker does at school "" etc.
  TODO Norm
  * Have chosen to interpret -0 and +0 as valid.
  * Uses a best friend type algorithm but optimised to share operations.
  * This algorithm is operation cheap but comparison expensive.
- * "" and " " both return Error. This is what the checker does Whereas no
+ * "" and " " both return Error. This is what the checker does, whereas no
  * parameters returns the prompt.
  */
 
