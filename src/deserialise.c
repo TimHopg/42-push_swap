@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:06:40 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:45:40 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,18 @@ int	parse_input(int ac, char **av, t_stk **head)
 	else if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');
+		if (av == NULL)
+			return (free_stk(*head), -1);
 		list_len = 0;
 		while (av[list_len] != NULL)
 			list_len++;
 		if (format_list(list_len, av, 0, head) < 0)
-			return (-1);
+			return (free_av(av), -1);
+		free_av(av);
 	}
 	else if (format_list(ac, av, 1, head) < 0)
-		return (-1);
-	if (is_duplicate(*head))
+		return (free_av(av), -1);
+	if (is_duplicate(*head) || *head == NULL)
 		return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
 	return (0);
 }
@@ -59,6 +62,11 @@ static int	format_list(int count, char **strs, int start, t_stk **head)
 		if (ft_atoi_ps(strs[start++], &nbr) == -1)
 			return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
 		node = ft_stknew(nbr);
+		if (node == NULL)
+		{
+			free_stk(*head);
+			exit(1);
+		}
 		ft_stkadd_back(head, node);
 	}
 	return (0);

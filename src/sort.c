@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:39:19 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 15:34:39 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,6 @@ t_friends	*allocate_f_array(int len)
 
 	f_arr = malloc(sizeof(t_friends) * len);
 	if (f_arr == NULL)
-		return (NULL); // ! exit? deallocate
+		return (NULL);
 	return (f_arr);
 }

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:59:03 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:12:43 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,15 @@ typedef struct s_friends
 void				ft_stkadd_back(t_stk **stk, t_stk *new);
 t_stk				*ft_stknew(int content);
 void				ft_print_stk(t_stk *head, char c);
-// static int			preprocessing(t_stk **a);
 
 // utils
 void				free_stk(t_stk *head);
 t_stk				*stk_last(t_stk *stk);
 int					list_min(t_stk *head);
-int					list_max(t_stk *head);
 int					list_len(t_stk *stk);
 float				list_mean(t_stk *stk);
 int					find_node(t_stk *a, int x);
+void				free_av(char **arr);
 
 // ops
 void				op_s(t_stk **a, t_stk **b, char c);

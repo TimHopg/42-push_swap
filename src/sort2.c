@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:56:34 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 00:06:18 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 15:46:17 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ t_friends	*build_f_array(t_stk **a, t_stk **b)
 	i = 0;
 	len_b = list_len(*b);
 	f_arr = allocate_f_array(len_b);
+	if (f_arr == NULL)
+		return (NULL);
 	curr = (*b);
 	while (i < len_b)
 	{

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 10:55:36 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/14 22:57:17 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/15 18:48:30 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,6 @@ int	list_min(t_stk *head)
 		curr = curr->next;
 	}
 	return (min);
-}
-
-/*
- * Returns max data value from list.
- */
-
-int	list_max(t_stk *head)
-{
-	t_stk	*curr;
-	int		max;
-
-	curr = head;
-	max = curr->content;
-	while (curr)
-	{
-		if (curr->content > max)
-			max = curr->content;
-		curr = curr->next;
-	}
-	return (max);
 }
 
 /*
@@ -112,4 +92,18 @@ int	find_node(t_stk *a, int x)
 		a = a->next;
 	}
 	return (0);
+}
+
+/*
+ * Frees char **
+ */
+
+void	free_av(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }
