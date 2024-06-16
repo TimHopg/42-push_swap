@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 18:12:43 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/16 14:23:23 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void				op_r(t_stk **a, t_stk **b, char c);
 void				op_rr(t_stk **a, t_stk **b, char c);
 void				stk_mod(void (*mod)(t_stk **, t_stk **, char c), t_stk **a,
 						t_stk **b, char c);
+
 // deserialise
 int					parse_input(int ac, char **av, t_stk **head);
 int					is_duplicate(t_stk *a);
@@ -74,5 +75,12 @@ void				find_cheapest(t_friends *t_arr, int b_len, t_stk **a,
 						t_stk **b);
 void				push_cheapest(t_stk **a, t_stk **b, t_friends *t_arr,
 						int i);
+
+// checker
+void				push(t_stk **from, t_stk **to);
+int					interpret_instruction(t_stk **a, t_stk **b, char *l);
+void				top_swap(t_stk **stack);
+void				reverse_rotate(t_stk **stk);
+void				rotate(t_stk **stk);
 
 #endif

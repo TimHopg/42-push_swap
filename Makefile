@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/16 10:31:23 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/16 14:17:05 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC 		= 	deserialise.c \
 				sort3.c \
 				sortfive.c
 				
-SRC_BONUS 	= 	checker.c
+SRC_BONUS 	= 	checker.c \
+				checker_utils.c
 
 OBJ_MAIN 	= 	$(addprefix $(OBJ_DIR), $(SRC_MAIN:.c=.o))
 OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.c=.o))
