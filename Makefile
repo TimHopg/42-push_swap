@@ -6,11 +6,12 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/15 17:57:31 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/16 10:17:19 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS = checker
 CC = cc
 RM = rm -rf
 
@@ -18,22 +19,27 @@ CFLAGS = -Wall -Wextra -Werror -Iinclude -g # MAIN
 # CFLAGS = -Wall -Wextra -Werror -Iinclude -g -O0 # for valgrind
 # CFLAGS = -Wall -Wextra -Werror -Iinclude -g -fsanitize=address # for fsanitize
 
-SRC_DIR = src/
-OBJ_DIR = obj/
-LIBFT_DIR = libft/
+SRC_DIR 	= src/
+OBJ_DIR 	= obj/
+LIBFT_DIR 	= libft/
 
-SRC = 	deserialise.c \
-		list_utils.c \
-		list_utils2.c \
-		operations.c \
-		operations2.c \
-		sort.c \
-		sort2.c \
-		sort3.c \
-		sortfive.c \
-		main.c
+SRC_MAIN 	= 	push_swap.c
 
-OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+SRC_SHARED 	= 	deserialise.c \
+				list_utils.c \
+				list_utils2.c \
+				operations.c \
+				operations2.c \
+				sort.c \
+				sort2.c \
+				sort3.c \
+				sortfive.c
+				
+SRC_BONUS 	= 	checker.c
+
+OBJ_MAIN 	= 	$(addprefix $(OBJ_DIR), $(SRC_MAIN:.c=.o))
+OBJ_SHARED	=	$(addprefix $(OBJ_DIR), $(SRC_SHARED:.c=.o))
+OBJ_BONUS 	= 	$(addprefix $(OBJ_DIR), $(SRC_BONUS:.c=.o))
 
 INCLUDE = -L ./libft -lft
 
@@ -41,13 +47,21 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_MAIN) $(OBJ_SHARED)
 	@make -C $(LIBFT_DIR)
 	@echo ""${BLUE}$(NAME)""${NC}Compiling... "\c"
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(INCLUDE)
+	@$(CC) $(CFLAGS) $(OBJ_MAIN) $(OBJ_SHARED) -o $(NAME) $(INCLUDE)
+	@echo ""${GREEN}Complete""$(NC)""
+
+$(BONUS): $(OBJ_BONUS) $(OBJ_SHARED)
+	@make -C $(LIBFT_DIR)
+	@echo ""${BLUE}$(BONUS)""${NC}Compiling... "\c"
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(OBJ_SHARED) -o $(BONUS) $(INCLUDE)
 	@echo ""${GREEN}Complete""$(NC)""
 
 all: $(NAME)
+
+bonus: $(BONUS)
 
 clean:
 	@cd $(LIBFT_DIR) && $(MAKE) clean
@@ -58,6 +72,7 @@ clean:
 fclean: clean
 	@cd $(LIBFT_DIR) && $(MAKE) fclean
 	@$(RM) $(NAME)
+	@$(RM) $(BONUS)
 
 re: fclean all
 
