@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/16 10:17:19 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/16 10:31:23 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ LIBFT_DIR 	= libft/
 
 SRC_MAIN 	= 	push_swap.c
 
-SRC_SHARED 	= 	deserialise.c \
+SRC 		= 	deserialise.c \
 				list_utils.c \
 				list_utils2.c \
 				operations.c \
@@ -38,7 +38,7 @@ SRC_SHARED 	= 	deserialise.c \
 SRC_BONUS 	= 	checker.c
 
 OBJ_MAIN 	= 	$(addprefix $(OBJ_DIR), $(SRC_MAIN:.c=.o))
-OBJ_SHARED	=	$(addprefix $(OBJ_DIR), $(SRC_SHARED:.c=.o))
+OBJ			=	$(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 OBJ_BONUS 	= 	$(addprefix $(OBJ_DIR), $(SRC_BONUS:.c=.o))
 
 INCLUDE = -L ./libft -lft
@@ -47,16 +47,16 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJ_MAIN) $(OBJ_SHARED)
+$(NAME): $(OBJ_MAIN) $(OBJ)
 	@make -C $(LIBFT_DIR)
 	@echo ""${BLUE}$(NAME)""${NC}Compiling... "\c"
-	@$(CC) $(CFLAGS) $(OBJ_MAIN) $(OBJ_SHARED) -o $(NAME) $(INCLUDE)
+	@$(CC) $(CFLAGS) $(OBJ_MAIN) $(OBJ) -o $(NAME) $(INCLUDE)
 	@echo ""${GREEN}Complete""$(NC)""
 
-$(BONUS): $(OBJ_BONUS) $(OBJ_SHARED)
+$(BONUS): $(OBJ_BONUS) $(OBJ)
 	@make -C $(LIBFT_DIR)
 	@echo ""${BLUE}$(BONUS)""${NC}Compiling... "\c"
-	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(OBJ_SHARED) -o $(BONUS) $(INCLUDE)
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(OBJ) -o $(BONUS) $(INCLUDE)
 	@echo ""${GREEN}Complete""$(NC)""
 
 all: $(NAME)

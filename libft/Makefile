@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 19:27:57 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/15 00:43:42 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/16 12:48:39 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,9 +71,7 @@ SRC			= 	ft_isalpha.c \
 				ft_printf.c \
 				ft_printf_utils.c \
 				ft_printf_utils2.c \
-				get_next_line.c \
-				get_next_line_utils.c \
-				# putnbr_base.c
+				get_next_line.c 
 
 OBJ			= $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 
