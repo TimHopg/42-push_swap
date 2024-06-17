@@ -6,18 +6,20 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/16 12:02:38 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/16 18:26:34 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- TODO ensure bonus doesn't relink
  TODO visualiser
+ TODO check printf doesn't exist (list all symbols)
+ TODO read subject thoroughly
  TODO check leaks at school. "1 2 3" "" 1 2 3, etc.
  TODO check what the checker does at school "" etc.
  TODO Norm
+ * Arguments can be passed "1 2 3" or 1 2 3 but not a combination of the two
  * Have chosen to interpret -0 and +0 as valid.
  * Uses a best friend type algorithm but optimised to share operations.
  * This algorithm is operation cheap but comparison expensive.
