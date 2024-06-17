@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/17 13:16:51 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/17 15:57:30 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ BONUS = checker
 CC = cc
 RM = rm -rf
 
-CFLAGS = -Wall -Wextra -Werror -Iinclude -g # MAIN
+CFLAGS = -Wall -Wextra -Werror -Iinclude # MAIN
 # CFLAGS = -Wall -Wextra -Werror -Iinclude -g -O0 # for valgrind
 # CFLAGS = -Wall -Wextra -Werror -Iinclude -g -fsanitize=address # for fsanitize
 
