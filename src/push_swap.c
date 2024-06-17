@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:12:47 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:48:43 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-// ft_printf("Before\n");
-// ft_print_stk(a, 'a');
-// ft_printf("\n");
+	// ft_printf("Before\n");
+	// ft_print_stk(a, 'a');
+	// ft_printf("\n");
 
-// ft_printf("\n");
-// ft_printf("After\n");
-// ft_print_stk(a, 'a');
+	// ft_printf("\n");
+	// ft_printf("After\n");
+	// ft_print_stk(a, 'a');
