@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:48:43 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:06:53 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,5 @@ int	main(int ac, char **av)
 	// ft_printf("\n");
 	// ft_printf("After\n");
 	// ft_print_stk(a, 'a');
+
+	// ARG=`echo {0..500}$'\n' | sort -R | tr "\n" " "` ; ./push_swap $ARG
