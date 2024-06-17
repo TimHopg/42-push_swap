@@ -6,13 +6,11 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 20:23:28 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/16 18:09:27 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:06:14 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// TODO Check leaks
 
 /*
  * Reads instructions from the standard input line by line using
