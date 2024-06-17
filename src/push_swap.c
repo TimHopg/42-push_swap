@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:01:22 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:06:31 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,11 +84,6 @@ int	main(int ac, char **av)
 	a = NULL;
 	if (parse_input(ac, av, &a) < 0)
 		return (-1);
-
-	ft_printf("Before\n");
-	ft_print_stk(a, 'a');
-	ft_printf("\n");
-
 	preprocessing(&a);
 	free_stk(a);
 	return (0);
