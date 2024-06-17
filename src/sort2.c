@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:56:34 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 15:46:17 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:08:29 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,8 +122,6 @@ static void	diff_sign(t_stk **a, t_stk **b, int a_c, int b_c)
 /*
  * Moves cheapest pair to top of their respective stacks and pushes from b to a
  */
-
-// TODO needs checking
 
 void	push_cheapest(t_stk **a, t_stk **b, t_friends *t_arr, int i)
 {

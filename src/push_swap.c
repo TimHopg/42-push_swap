@@ -6,14 +6,14 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 13:23:06 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:06:31 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:12:47 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
- * Arguments can be passed "1 2 3" or 1 2 3 but not a combination of the two.
+ * Arguments can be passed "1 2 3" or 1 2 3 or a combination of the two. 
  * Have chosen to interpret -0 and +0 as valid.
  * Uses a best friend type algorithm but optimised to share operations.
  * This algorithm is operation cheap but comparison expensive.
