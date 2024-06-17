@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/15 18:45:40 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 10:08:31 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	parse_input(int ac, char **av, t_stk **head)
 		free_av(av);
 	}
 	else if (format_list(ac, av, 1, head) < 0)
-		return (free_av(av), -1);
+		return (-1);
 	if (is_duplicate(*head) || *head == NULL)
 		return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
 	return (0);
