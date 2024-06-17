@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:18:11 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:47:23 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 15:50:15 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,7 @@ int	determine_friend(t_stk *a, int data)
 {
 	t_stk	*curr;
 	int		friend;
-	int		first_pass;
 
-	first_pass = 1;
 	curr = a;
 	while (curr->content < data)
 		curr = curr->next;
