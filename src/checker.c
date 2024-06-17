@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 20:23:28 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:17:19 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 16:26:25 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int ac, char **av)
 		err_code = -1;
 	if (is_ordered(&a) && !err_code && a_len == list_len(a))
 		ft_putstr_fd("OK\n", 1);
-	else if ((!is_ordered(&a) && !err_code) || !(a_len == list_len(a)))
+	else if (!err_code && (!is_ordered(&a) || !(a_len == list_len(a))))
 		ft_putstr_fd("KO\n", 1);
 	free_stk(a);
 	return (0);
