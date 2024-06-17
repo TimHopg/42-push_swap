@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 20:23:28 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 11:06:14 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 13:03:37 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,18 @@ int	main(int ac, char **av)
 {
 	t_stk	*a;
 	int		err_code;
+	int		a_len;
 
 	a = NULL;
 	err_code = 0;
 	if (parse_input(ac, av, &a) < 0)
 		return (-1);
+	a_len = list_len(a);
 	if (attempt_sort(&a) < 0)
 		err_code = -1;
-	if (is_ordered(&a) && err_code >= 0)
+	if (is_ordered(&a) && !err_code && a_len == list_len(a))
 		ft_putstr_fd("OK\n", 1);
-	else if (!is_ordered(&a) && err_code >= 0)
+	else if ((!is_ordered(&a) && !err_code) || !(a_len == list_len(a)))
 		ft_putstr_fd("KO\n", 1);
 	free_stk(a);
 	return (0);

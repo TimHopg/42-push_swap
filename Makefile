@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/17 10:40:20 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/17 13:16:51 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ LIBFT_DIR 	= libft/
 SRC_MAIN 	= 	push_swap.c
 
 SRC 		= 	deserialise.c \
+				deserialise2.c \
 				list_utils.c \
 				list_utils2.c \
 				operations.c \

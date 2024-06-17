@@ -6,13 +6,12 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 10:08:31 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:38:50 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	format_list(int count, char **strs, int start, t_stk **head);
 static int	ft_atoi_ps(const char *nptr, long *output);
 static int	is_int(long nbr);
 int			is_duplicate(t_stk *stk);
@@ -23,6 +22,21 @@ int			is_duplicate(t_stk *stk);
  */
 
 int	parse_input(int ac, char **av, t_stk **head)
+{
+	int i;
+
+	i = 1;
+	if (ac == 1)
+		return (-1);
+	while (i <= ac - 1)
+		if (split_sort(av, head, i++) < 0)
+			return (-1);
+	if (is_duplicate(*head) || *head == NULL)
+		return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
+	return (0);
+}
+
+int	parse_input_ORIGINAL(int ac, char **av, t_stk **head)
 {
 	int	list_len;
 
@@ -52,7 +66,27 @@ int	parse_input(int ac, char **av, t_stk **head)
  * Count from 'argc' must begin from one, otherwise from 0.
  */
 
-static int	format_list(int count, char **strs, int start, t_stk **head)
+int	format_list(int count, char **strs, int start, t_stk **head)
+{
+	t_stk	*node;
+	long	nbr;
+
+	while (start < count)
+	{
+		if (ft_atoi_ps(strs[start++], &nbr) == -1)
+			return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
+		node = ft_stknew(nbr);
+		if (node == NULL)
+		{
+			free_stk(*head);
+			exit(1);
+		}
+		ft_stkadd_back(head, node);
+	}
+	return (0);
+}
+
+int	format_list_ORIGINAL(int count, char **strs, int start, t_stk **head)
 {
 	t_stk	*node;
 	long	nbr;

@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 13:54:26 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/16 14:23:23 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:19:46 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ void				stk_mod(void (*mod)(t_stk **, t_stk **, char c), t_stk **a,
 // deserialise
 int					parse_input(int ac, char **av, t_stk **head);
 int					is_duplicate(t_stk *a);
+int					split_sort(char **av, t_stk **a, int i);
+int					format_list(int count, char **strs, int start,
+						t_stk **head);
 
 // sort
 int					sort_three(t_stk **head_a, t_stk **head_b);
