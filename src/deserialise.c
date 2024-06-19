@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/17 15:11:58 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/06/19 12:23:21 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	format_list(int count, char **strs, int start, t_stk **head)
 	t_stk	*node;
 	long	nbr;
 
+	if (!count)
+		return (free_stk(*head), ft_putstr_fd("Error\n", 2), -1);
 	while (start < count)
 	{
 		if (ft_atoi_ps(strs[start++], &nbr) == -1)
