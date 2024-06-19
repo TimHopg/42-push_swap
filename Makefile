@@ -6,7 +6,7 @@
 #    By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 11:25:34 by thopgood          #+#    #+#              #
-#    Updated: 2024/06/19 12:32:45 by thopgood         ###   ########.fr        #
+#    Updated: 2024/06/19 12:49:13 by thopgood         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,8 @@ $(BONUS): $(OBJ_BONUS) $(OBJ)
 all: $(NAME)
 
 bonus: $(BONUS)
+
+both: all bonus
 
 clean:
 	@cd $(LIBFT_DIR) && $(MAKE) clean
