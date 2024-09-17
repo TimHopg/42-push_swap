@@ -6,7 +6,7 @@
 /*   By: thopgood <thopgood@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 00:03:55 by thopgood          #+#    #+#             */
-/*   Updated: 2024/06/19 12:23:21 by thopgood         ###   ########.fr       */
+/*   Updated: 2024/08/28 11:07:31 by thopgood         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ static int	is_int(long nbr)
  * Function instead edits an int ptr to return the result to leave ints free
  * to handle errors.
  */
-
 static int	ft_atoi_ps(const char *nptr, long *output)
 {
 	int	neg;
