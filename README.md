@@ -1,4 +1,4 @@
-# Push_Swap
+# push_swap
 
 ![push_swap grade](./push_swap_grade.png)
 
