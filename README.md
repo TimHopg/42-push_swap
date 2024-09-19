@@ -1,5 +1,7 @@
 # Push_Swap
 
+![push_swap grade](./push_swap_grade.png)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
